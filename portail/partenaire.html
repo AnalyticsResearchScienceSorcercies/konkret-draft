@@ -1,490 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-fr="Tableau de bord partenaire | KONKRET Haiti" data-en="Partner Dashboard | KONKRET Haiti">Tableau de bord partenaire | KONKRET Haiti</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
-</head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Tableau de bord partenaire | KONKRET Haiti</title><link rel="stylesheet" href="../style.css"></head>
 <body>
+<nav class="nav"><div class="nav-inner">
+  <a href="/" class="nav-logo">KONKRET</a>
+  <ul class="nav-links">
+    <li><span style="color:rgba(250,250,250,0.85);font-size:0.9rem" data-lang="fr">Bienvenue, [Organisation]</span><span style="color:rgba(250,250,250,0.85);font-size:0.9rem" data-lang="en">Welcome, [Organization]</span></li>
+    <li><a href="/portail.html" data-lang="fr">Deconnexion</a><a href="/portail.html" data-lang="en">Log out</a></li>
+    <li><button class="lang-toggle">EN</button></li>
+  </ul>
+</div></nav>
 
-<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<section class="hero" style="padding:2rem 1.5rem 1.5rem"><div class="container">
+  <h1 data-lang="fr">Tableau de bord partenaire</h1><h1 data-lang="en">Partner Dashboard</h1>
+</div></section>
 
-<div class="portal-wrap">
+<section class="section"><div class="container">
+  <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+    <div class="card" style="text-align:center"><span style="font-size:2rem;font-weight:700;color:var(--green)">[x]</span><br><span data-lang="fr">Abonnes actifs</span><span data-lang="en">Active subscribers</span></div>
+    <div class="card" style="text-align:center"><span style="font-size:2rem;font-weight:700;color:var(--green)">[x]</span><br><span data-lang="fr">Jeunes parraines</span><span data-lang="en">Youth sponsored</span></div>
+    <div class="card" style="text-align:center"><span style="font-size:2rem;font-weight:700;color:var(--green)">$[x]</span><br><span data-lang="fr">Total investi</span><span data-lang="en">Total invested</span></div>
+    <div class="card" style="text-align:center"><span style="font-size:2rem;font-weight:700;color:var(--gold)">$[x]</span><br><span data-lang="fr">Credit parrainage (5%)</span><span data-lang="en">Referral credit (5%)</span></div>
+  </div>
+</div></section>
 
-  <!-- ─── SIDEBAR ─── -->
-  <aside class="portal-sidebar">
-    <div class="sidebar-logo"><a href="/">KONKRET</a></div>
-    <div class="sidebar-nav">
-      <a href="#overview" class="active">
-        <span class="icon">&#128200;</span>
-        <span data-lang="fr">Vue d'ensemble</span>
-        <span data-lang="en">Overview</span>
-      </a>
-      <a href="#abonnes">
-        <span class="icon">&#128101;</span>
-        <span data-lang="fr">Nos Abonn&eacute;s</span>
-        <span data-lang="en">Our Subscribers</span>
-      </a>
-      <a href="#jeunes">
-        <span class="icon">&#127793;</span>
-        <span data-lang="fr">Nos Jeunes</span>
-        <span data-lang="en">Our Youth</span>
-      </a>
-      <a href="#contributions">
-        <span class="icon">&#128295;</span>
-        <span data-lang="fr">Contributions</span>
-        <span data-lang="en">Contributions</span>
-      </a>
-      <a href="#rapports">
-        <span class="icon">&#128196;</span>
-        <span data-lang="fr">Rapports</span>
-        <span data-lang="en">Reports</span>
-      </a>
-      <a href="#parrainage">
-        <span class="icon">&#128279;</span>
-        <span data-lang="fr">Parrainage</span>
-        <span data-lang="en">Referral</span>
-      </a>
-      <a href="#harvest-day">
-        <span class="icon">&#127881;</span>
-        <span>Harvest Day</span>
-      </a>
-    </div>
-    <div class="sidebar-bottom">
-      <a href="#" data-lang="fr">Aide</a>
-      <a href="#" data-lang="en">Help</a>
-      <a href="#" data-lang="fr">D&eacute;connexion</a>
-      <a href="#" data-lang="en">Log out</a>
-    </div>
-  </aside>
+<section class="section"><div class="container">
+  <h2 data-lang="fr">Vos abonnes</h2><h2 data-lang="en">Your subscribers</h2>
+  <table>
+    <thead><tr><th data-lang="fr">Nom</th><th data-lang="en">Name</th><th>Email</th><th data-lang="fr">Depuis</th><th data-lang="en">Since</th><th data-lang="fr">Statut</th><th data-lang="en">Status</th><th data-lang="fr">Jeune</th><th data-lang="en">Youth</th></tr></thead>
+    <tbody>
+      <tr><td>[name]</td><td>[email]</td><td>[date]</td><td style="color:var(--green)" data-lang="fr">Actif</td><td style="color:var(--green)" data-lang="en">Active</td><td>[youth]</td></tr>
+      <tr><td>[name]</td><td>[email]</td><td>[date]</td><td style="color:var(--gold)" data-lang="fr">En pause</td><td style="color:var(--gold)" data-lang="en">Paused</td><td>--</td></tr>
+    </tbody>
+  </table>
+</div></section>
 
-  <!-- ─── MAIN ─── -->
-  <div class="portal-main">
+<section class="section"><div class="container">
+  <h2 data-lang="fr">Equipement finance par votre groupe</h2><h2 data-lang="en">Equipment funded by your group</h2>
+  <table>
+    <thead><tr><th data-lang="fr">Article</th><th data-lang="en">Item</th><th data-lang="fr">Prix</th><th data-lang="en">Price</th><th>Date</th><th data-lang="fr">Statut</th><th data-lang="en">Status</th><th>BaseScan</th></tr></thead>
+    <tbody>
+      <tr><td data-lang="fr">Lecteur NFC</td><td data-lang="en">NFC Reader</td><td>$100</td><td>[date]</td><td data-lang="fr" style="color:var(--green)">En service</td><td data-lang="en" style="color:var(--green)">In use</td><td><a href="#">[link]</a></td></tr>
+      <tr><td data-lang="fr">50 livres</td><td data-lang="en">50 Books</td><td>$500</td><td>[date]</td><td data-lang="fr" style="color:var(--green)">Livre</td><td data-lang="en" style="color:var(--green)">Delivered</td><td><a href="#">[link]</a></td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:0.85rem;color:var(--text-light)" data-lang="fr">Chaque contribution a un recu blockchain.</p>
+  <p style="font-size:0.85rem;color:var(--text-light)" data-lang="en">Every contribution has a blockchain receipt.</p>
+</div></section>
 
-    <header class="portal-topbar">
-      <div class="greeting">
-        <span data-lang="fr">Tableau de bord &mdash; &Eacute;glise Baptiste de Mattapan</span>
-        <span data-lang="en">Dashboard &mdash; Mattapan Baptist Church</span>
-      </div>
-      <div class="topbar-actions">
-        <button class="lang-toggle">EN</button>
-        <span class="notif-bell">&#128276;<span class="dot"></span></span>
-        <span class="avatar">EB</span>
-      </div>
-    </header>
+<section class="section"><div class="container">
+  <h2 data-lang="fr">Code de parrainage</h2><h2 data-lang="en">Referral code</h2>
+  <div class="card" style="max-width:500px">
+    <table><tbody>
+      <tr><td data-lang="fr"><strong>Votre code</strong></td><td data-lang="en"><strong>Your code</strong></td><td style="font-family:monospace;font-weight:700">[CODE]</td></tr>
+      <tr><td data-lang="fr"><strong>Lien partageable</strong></td><td data-lang="en"><strong>Shareable link</strong></td><td style="font-size:0.85rem">konkret-haiti.com/souscrire?ref=[CODE]</td></tr>
+      <tr><td data-lang="fr"><strong>Credit disponible</strong></td><td data-lang="en"><strong>Credit available</strong></td><td style="color:var(--green);font-weight:700">$[amount]</td></tr>
+    </tbody></table>
+    <p style="font-size:0.85rem;color:var(--text-light);margin-top:1rem" data-lang="fr">Partagez votre code. Pour chaque abonne recrute, votre groupe recoit 5% de credit.</p>
+    <p style="font-size:0.85rem;color:var(--text-light);margin-top:1rem" data-lang="en">Share your code. For every subscriber recruited, your group receives 5% credit.</p>
+  </div>
+</div></section>
 
-    <div class="portal-content">
+<section class="section"><div class="container">
+  <h2 data-lang="fr">Rapports trimestriels</h2><h2 data-lang="en">Quarterly reports</h2>
+  <table>
+    <thead><tr><th data-lang="fr">Trimestre</th><th data-lang="en">Quarter</th><th>FR PDF</th><th>EN PDF</th></tr></thead>
+    <tbody>
+      <tr><td>Q1 2026</td><td><a href="#" data-lang="fr">Telecharger</a><a href="#" data-lang="en">Download</a></td><td><a href="#">Download</a></td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:0.85rem;color:var(--text-light)" data-lang="fr">Formate pour votre conseil d'administration. Inclut: abonnes, jeunes, equipement, transactions blockchain, photos.</p>
+  <p style="font-size:0.85rem;color:var(--text-light)" data-lang="en">Formatted for your board. Includes: subscribers, youth, equipment, blockchain transactions, photos.</p>
+</div></section>
 
-      <!-- ─── KPI OVERVIEW ─── -->
-      <div id="overview">
-        <div class="kpi-row">
-          <div class="kpi-card-portal">
-            <div class="kpi-num">12</div>
-            <div class="kpi-lbl" data-lang="fr">Bo&icirc;tes actives</div>
-            <div class="kpi-lbl" data-lang="en">Active boxes</div>
-          </div>
-          <div class="kpi-card-portal">
-            <div class="kpi-num">12</div>
-            <div class="kpi-lbl" data-lang="fr">Membres actifs</div>
-            <div class="kpi-lbl" data-lang="en">Active members</div>
-          </div>
-          <div class="kpi-card-portal">
-            <div class="kpi-num gold">$1,080</div>
-            <div class="kpi-lbl" data-lang="fr">Total ce trimestre</div>
-            <div class="kpi-lbl" data-lang="en">Total this quarter</div>
-          </div>
-          <div class="kpi-card-portal">
-            <div class="kpi-num">12</div>
-            <div class="kpi-lbl" data-lang="fr">Jeunes parrain&eacute;s</div>
-            <div class="kpi-lbl" data-lang="en">Youth sponsored</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ─── SUBSCRIBERS ─── -->
-      <div class="p-card" id="abonnes">
-        <h2>
-          <span data-lang="fr">Vos abonn&eacute;s</span>
-          <span data-lang="en">Your subscribers</span>
-        </h2>
-        <div style="display:flex; gap:12px; margin-bottom:1rem; flex-wrap:wrap;">
-          <a href="#" class="btn btn-primary btn-sm" data-lang="fr">+ Ajouter un membre</a>
-          <a href="#" class="btn btn-primary btn-sm" data-lang="en">+ Add a member</a>
-          <a href="#" class="btn btn-secondary btn-sm" data-lang="fr">Exporter CSV</a>
-          <a href="#" class="btn btn-secondary btn-sm" data-lang="en">Export CSV</a>
-        </div>
-        <div style="overflow-x:auto;">
-          <table class="p-table">
-            <thead>
-              <tr>
-                <th data-lang="fr">Nom</th>
-                <th data-lang="en">Name</th>
-                <th>Email</th>
-                <th data-lang="fr">Depuis</th>
-                <th data-lang="en">Since</th>
-                <th data-lang="fr">Statut</th>
-                <th data-lang="en">Status</th>
-                <th data-lang="fr">Jeune</th>
-                <th data-lang="en">Youth</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Sophia Belizaire</td>
-                <td>sophia.b@email.com</td>
-                <td>Oct. 2025</td>
-                <td><span class="badge badge-green" data-lang="fr">Actif</span><span class="badge badge-green" data-lang="en">Active</span></td>
-                <td>Marie-Claire D.</td>
-              </tr>
-              <tr>
-                <td>James Dorceval</td>
-                <td>james.d@email.com</td>
-                <td>Oct. 2025</td>
-                <td><span class="badge badge-green" data-lang="fr">Actif</span><span class="badge badge-green" data-lang="en">Active</span></td>
-                <td>Jean-Pierre M.</td>
-              </tr>
-              <tr>
-                <td>Ruth Toussaint</td>
-                <td>ruth.t@email.com</td>
-                <td>Nov. 2025</td>
-                <td><span class="badge badge-green" data-lang="fr">Actif</span><span class="badge badge-green" data-lang="en">Active</span></td>
-                <td>Fabienne J.</td>
-              </tr>
-              <tr>
-                <td>Patrick Auguste</td>
-                <td>pat.a@email.com</td>
-                <td>Nov. 2025</td>
-                <td><span class="badge badge-green" data-lang="fr">Actif</span><span class="badge badge-green" data-lang="en">Active</span></td>
-                <td>Stanley R.</td>
-              </tr>
-              <tr>
-                <td>Nadine Charles</td>
-                <td>nadine.c@email.com</td>
-                <td>D&eacute;c. 2025</td>
-                <td><span class="badge badge-amber" data-lang="fr">En pause</span><span class="badge badge-amber" data-lang="en">Paused</span></td>
-                <td>&mdash;</td>
-              </tr>
-              <tr>
-                <td>Emmanuel Pierre</td>
-                <td>e.pierre@email.com</td>
-                <td>Janv. 2026</td>
-                <td><span class="badge badge-green" data-lang="fr">Actif</span><span class="badge badge-green" data-lang="en">Active</span></td>
-                <td>Rosalie V.</td>
-              </tr>
-              <tr>
-                <td>Micheline Sylvain</td>
-                <td>m.sylvain@email.com</td>
-                <td>Janv. 2026</td>
-                <td><span class="badge badge-green" data-lang="fr">Actif</span><span class="badge badge-green" data-lang="en">Active</span></td>
-                <td>Claudette N.</td>
-              </tr>
-              <tr>
-                <td>Robert Jean-Louis</td>
-                <td>r.jl@email.com</td>
-                <td>F&eacute;v. 2026</td>
-                <td><span class="badge badge-green" data-lang="fr">Actif</span><span class="badge badge-green" data-lang="en">Active</span></td>
-                <td>Wilner A.</td>
-              </tr>
-              <tr>
-                <td>Carline B&eacute;lair</td>
-                <td>carline.b@email.com</td>
-                <td>F&eacute;v. 2026</td>
-                <td><span class="badge badge-green" data-lang="fr">Actif</span><span class="badge badge-green" data-lang="en">Active</span></td>
-                <td>Guerline B.</td>
-              </tr>
-              <tr>
-                <td>F&eacute;lix Th&eacute;odore</td>
-                <td>felix.t@email.com</td>
-                <td>Mars 2026</td>
-                <td><span class="badge badge-green" data-lang="fr">Actif</span><span class="badge badge-green" data-lang="en">Active</span></td>
-                <td>Ricardo P.</td>
-              </tr>
-              <tr>
-                <td>Yanick Duval</td>
-                <td>yanick.d@email.com</td>
-                <td>Mars 2026</td>
-                <td><span class="badge badge-green" data-lang="fr">Actif</span><span class="badge badge-green" data-lang="en">Active</span></td>
-                <td>Esther M.</td>
-              </tr>
-              <tr>
-                <td>Rose-Marie Etienne</td>
-                <td>rosemarie.e@email.com</td>
-                <td>Mars 2026</td>
-                <td><span class="badge badge-green" data-lang="fr">Actif</span><span class="badge badge-green" data-lang="en">Active</span></td>
-                <td>Dieunison L.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- ─── YOUTH GRID ─── -->
-      <div class="p-card" id="jeunes">
-        <h2>
-          <span data-lang="fr">Les jeunes de votre groupe</span>
-          <span data-lang="en">Your group's youth</span>
-        </h2>
-        <div class="youth-grid">
-          <div class="youth-mini">
-            <div class="ym-photo">Photo</div>
-            <div class="ym-name">Marie-Claire D.</div>
-            <div class="ym-detail">Site 0 &middot; Moringa</div>
-            <div class="ym-detail">3 trim.</div>
-          </div>
-          <div class="youth-mini">
-            <div class="ym-photo">Photo</div>
-            <div class="ym-name">Jean-Pierre M.</div>
-            <div class="ym-detail">Site 0 &middot; Caf&eacute;</div>
-            <div class="ym-detail">3 trim.</div>
-          </div>
-          <div class="youth-mini">
-            <div class="ym-photo">Photo</div>
-            <div class="ym-name">Fabienne J.</div>
-            <div class="ym-detail">Site 0 &middot; L&eacute;gumes</div>
-            <div class="ym-detail">2 trim.</div>
-          </div>
-          <div class="youth-mini">
-            <div class="ym-photo">Photo</div>
-            <div class="ym-name">Stanley R.</div>
-            <div class="ym-detail">Site 0 &middot; Lapen</div>
-            <div class="ym-detail">2 trim.</div>
-          </div>
-          <div class="youth-mini">
-            <div class="ym-photo">Photo</div>
-            <div class="ym-name">Rosalie V.</div>
-            <div class="ym-detail">Site 0 &middot; Miel</div>
-            <div class="ym-detail">1 trim.</div>
-          </div>
-          <div class="youth-mini">
-            <div class="ym-photo">Photo</div>
-            <div class="ym-name">Claudette N.</div>
-            <div class="ym-detail">Site 0 &middot; &Eacute;pices</div>
-            <div class="ym-detail">1 trim.</div>
-          </div>
-          <div class="youth-mini">
-            <div class="ym-photo">Photo</div>
-            <div class="ym-name">Wilner A.</div>
-            <div class="ym-detail">Site 0 &middot; Moringa</div>
-            <div class="ym-detail">1 trim.</div>
-          </div>
-          <div class="youth-mini">
-            <div class="ym-photo">Photo</div>
-            <div class="ym-name">Guerline B.</div>
-            <div class="ym-detail">Site 0 &middot; Caf&eacute;</div>
-            <div class="ym-detail">1 trim.</div>
-          </div>
-          <div class="youth-mini">
-            <div class="ym-photo">Photo</div>
-            <div class="ym-name">Ricardo P.</div>
-            <div class="ym-detail">Site 1 &middot; Mangue</div>
-            <div class="ym-detail">1 trim.</div>
-          </div>
-          <div class="youth-mini">
-            <div class="ym-photo">Photo</div>
-            <div class="ym-name">Esther M.</div>
-            <div class="ym-detail">Site 1 &middot; Ricin</div>
-            <div class="ym-detail">1 trim.</div>
-          </div>
-          <div class="youth-mini">
-            <div class="ym-photo">Photo</div>
-            <div class="ym-name">Dieunison L.</div>
-            <div class="ym-detail">Site 1 &middot; Moringa</div>
-            <div class="ym-detail">1 trim.</div>
-          </div>
-          <div class="youth-mini">
-            <div class="ym-photo">Photo</div>
-            <div class="ym-name">Peterson G.</div>
-            <div class="ym-detail">Site 1 &middot; L&eacute;gumes</div>
-            <div class="ym-detail">1 trim.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ─── EQUIPMENT CONTRIBUTIONS ─── -->
-      <div class="p-card" id="contributions">
-        <h2>
-          <span data-lang="fr">&Eacute;quipement financ&eacute; par votre groupe</span>
-          <span data-lang="en">Equipment funded by your group</span>
-        </h2>
-        <div style="overflow-x:auto;">
-          <table class="p-table">
-            <thead>
-              <tr>
-                <th data-lang="fr">Article</th>
-                <th data-lang="en">Item</th>
-                <th data-lang="fr">Prix</th>
-                <th data-lang="en">Price</th>
-                <th>Date</th>
-                <th data-lang="fr">Statut</th>
-                <th data-lang="en">Status</th>
-                <th>BaseScan</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td data-lang="fr">5 lecteurs NFC</td>
-                <td data-lang="en">5 NFC readers</td>
-                <td>$500</td>
-                <td>15 janv. 2026</td>
-                <td><span class="badge badge-green" data-lang="fr">En service</span><span class="badge badge-green" data-lang="en">In use</span></td>
-                <td><a href="#" class="bs-link">0xf4c2...a917</a></td>
-              </tr>
-              <tr>
-                <td data-lang="fr">50 livres</td>
-                <td data-lang="en">50 books</td>
-                <td>$500</td>
-                <td>28 f&eacute;v. 2026</td>
-                <td><span class="badge badge-green" data-lang="fr">Livr&eacute;</span><span class="badge badge-green" data-lang="en">Delivered</span></td>
-                <td><a href="#" class="bs-link">0x72b1...d583</a></td>
-              </tr>
-              <tr>
-                <td data-lang="fr">Franchise compl&egrave;te</td>
-                <td data-lang="en">Full franchise</td>
-                <td>$3,600</td>
-                <td>10 mars 2026</td>
-                <td><span class="badge badge-amber" data-lang="fr">Command&eacute;</span><span class="badge badge-amber" data-lang="en">Ordered</span></td>
-                <td><a href="#" class="bs-link">0x9e3d...b274</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p style="font-size:0.8rem; color:var(--text-light); margin-top:0.75rem;">
-          <span data-lang="fr">Chaque contribution a un re&ccedil;u blockchain.</span>
-          <span data-lang="en">Every contribution has a blockchain receipt.</span>
-        </p>
-      </div>
-
-      <!-- ─── QUARTERLY REPORTS ─── -->
-      <div class="p-card" id="rapports">
-        <h2>
-          <span data-lang="fr">Rapports trimestriels</span>
-          <span data-lang="en">Quarterly reports</span>
-        </h2>
-        <table class="p-table">
-          <thead>
-            <tr>
-              <th data-lang="fr">Trimestre</th>
-              <th data-lang="en">Quarter</th>
-              <th>PDF</th>
-              <th data-lang="fr">G&eacute;n&eacute;r&eacute; le</th>
-              <th data-lang="en">Generated on</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Q1 2026</td>
-              <td>
-                <a href="#" class="btn btn-primary btn-sm" style="padding:6px 16px;" data-lang="fr">T&eacute;l&eacute;charger FR</a>
-                <a href="#" class="btn btn-primary btn-sm" style="padding:6px 16px;" data-lang="en">Download EN</a>
-                &nbsp;
-                <a href="#" class="btn btn-secondary btn-sm" style="padding:6px 16px;" data-lang="fr">T&eacute;l&eacute;charger EN</a>
-                <a href="#" class="btn btn-secondary btn-sm" style="padding:6px 16px;" data-lang="en">Download FR</a>
-              </td>
-              <td>2 avr. 2026</td>
-            </tr>
-            <tr>
-              <td>Q4 2025</td>
-              <td>
-                <a href="#" class="btn btn-primary btn-sm" style="padding:6px 16px;" data-lang="fr">T&eacute;l&eacute;charger FR</a>
-                <a href="#" class="btn btn-primary btn-sm" style="padding:6px 16px;" data-lang="en">Download EN</a>
-                &nbsp;
-                <a href="#" class="btn btn-secondary btn-sm" style="padding:6px 16px;" data-lang="fr">T&eacute;l&eacute;charger EN</a>
-                <a href="#" class="btn btn-secondary btn-sm" style="padding:6px 16px;" data-lang="en">Download FR</a>
-              </td>
-              <td>3 janv. 2026</td>
-            </tr>
-          </tbody>
-        </table>
-        <p style="font-size:0.8rem; color:var(--text-light); margin-top:0.75rem;">
-          <span data-lang="fr">Format&eacute; pour votre conseil d'administration. Inclut: abonn&eacute;s, jeunes, &eacute;quipement, transactions blockchain, photos.</span>
-          <span data-lang="en">Formatted for your board. Includes: subscribers, youth, equipment, blockchain transactions, photos.</span>
-        </p>
-      </div>
-
-      <!-- ─── REFERRAL CODE ─── -->
-      <div class="p-card" id="parrainage">
-        <h2>
-          <span data-lang="fr">Code de parrainage</span>
-          <span data-lang="en">Referral code</span>
-        </h2>
-        <div class="referral-box">
-          <p style="font-size:0.85rem; color:var(--text-light); margin-bottom:0.5rem;">
-            <span data-lang="fr">Partagez votre code. Pour chaque abonn&eacute; recrut&eacute;, votre groupe re&ccedil;oit 5% de cr&eacute;dit.</span>
-            <span data-lang="en">Share your code. For every subscriber recruited, your group receives 5% credit.</span>
-          </p>
-          <div class="referral-code">MATTAPAN-2026</div>
-          <p style="font-size:0.8rem; color:var(--text-light); margin-bottom:1rem;">konkret-haiti.com/souscrire?ref=MATTAPAN-2026</p>
-          <button class="btn btn-gold btn-sm" onclick="navigator.clipboard.writeText('https://konkret-haiti.com/souscrire?ref=MATTAPAN-2026')">
-            <span data-lang="fr">Copier le lien</span>
-            <span data-lang="en">Copy link</span>
-          </button>
-        </div>
-
-        <ul class="field-list" style="margin-top:1.25rem;">
-          <li>
-            <span class="fl-label" data-lang="fr">Abonn&eacute;s recrut&eacute;s</span>
-            <span class="fl-label" data-lang="en">Subscribers recruited</span>
-            <span class="fl-value">4</span>
-          </li>
-          <li>
-            <span class="fl-label" data-lang="fr">Cr&eacute;dit accumul&eacute;</span>
-            <span class="fl-label" data-lang="en">Credit accumulated</span>
-            <span class="fl-value">$54.00</span>
-          </li>
-          <li>
-            <span class="fl-label" data-lang="fr">Cr&eacute;dit utilis&eacute;</span>
-            <span class="fl-label" data-lang="en">Credit used</span>
-            <span class="fl-value">$0.00</span>
-          </li>
-          <li>
-            <span class="fl-label" data-lang="fr">Cr&eacute;dit disponible</span>
-            <span class="fl-label" data-lang="en">Credit available</span>
-            <span class="fl-value" style="color:var(--green); font-size:1.1rem;">$54.00</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- ─── HARVEST DAY ─── -->
-      <div class="p-card" id="harvest-day">
-        <h2>
-          <span data-lang="fr">Outils Harvest Day</span>
-          <span data-lang="en">Harvest Day tools</span>
-        </h2>
-        <div style="display:flex; flex-direction:column; gap:12px;">
-          <a href="#" class="btn btn-primary" style="text-align:left; display:flex; align-items:center; gap:12px;">
-            <span style="font-size:1.5rem;">&#127909;</span>
-            <span>
-              <span data-lang="fr">T&eacute;l&eacute;charger le kit Harvest Day</span>
-              <span data-lang="en">Download the Harvest Day kit</span>
-              <br>
-              <small style="opacity:0.8;" data-lang="fr">Vid&eacute;o, guide de d&eacute;gustation, fiche d'impact</small>
-              <small style="opacity:0.8;" data-lang="en">Video, tasting guide, impact sheet</small>
-            </span>
-          </a>
-          <a href="#" class="btn btn-secondary" style="text-align:left; display:flex; align-items:center; gap:12px;">
-            <span style="font-size:1.5rem;">&#128197;</span>
-            <span>
-              <span data-lang="fr">Planifier un &eacute;v&eacute;nement</span>
-              <span data-lang="en">Schedule an event</span>
-            </span>
-          </a>
-          <a href="#" class="btn btn-secondary" style="text-align:left; display:flex; align-items:center; gap:12px;">
-            <span style="font-size:1.5rem;">&#128206;</span>
-            <span>
-              <span data-lang="fr">Commander des mat&eacute;riaux imprim&eacute;s</span>
-              <span data-lang="en">Order printed materials</span>
-            </span>
-          </a>
-        </div>
-      </div>
-
-    </div><!-- .portal-content -->
-  </div><!-- .portal-main -->
-</div><!-- .portal-wrap -->
-
+<footer class="footer"><div class="footer-inner"><div><h4 style="color:var(--gold)">KONKRET</h4><p>Agrikilti. Jenes. Lavni.</p></div><div><h4>Navigation</h4><ul class="footer-links"><li><a href="/bwat-rekolt.html">Bwat Rekolt</a></li><li><a href="/contact.html">Contact</a></li></ul></div></div><div class="footer-bottom">&copy; 2026 KONKRET Haiti.</div></footer>
 <script src="../lang.js"></script>
 </body>
 </html>
