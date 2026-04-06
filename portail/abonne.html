@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-fr="Mon abonnement | KONKRET Haiti" data-en="My Subscription | KONKRET Haiti">Mon abonnement | KONKRET Haiti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+
+<div class="portal-wrap">
+
+  <!-- ─── SIDEBAR ─── -->
+  <aside class="portal-sidebar">
+    <div class="sidebar-logo"><a href="/">KONKRET</a></div>
+    <div class="sidebar-nav">
+      <a href="#abonnement" class="active">
+        <span class="icon">&#9733;</span>
+        <span data-lang="fr">Mon Abonnement</span>
+        <span data-lang="en">My Subscription</span>
+      </a>
+      <a href="#bwat">
+        <span class="icon">&#128230;</span>
+        <span data-lang="fr">Ma Bwat</span>
+        <span data-lang="en">My Box</span>
+      </a>
+      <a href="#jeune">
+        <span class="icon">&#128100;</span>
+        <span data-lang="fr">Mon Jeune</span>
+        <span data-lang="en">My Youth</span>
+      </a>
+      <a href="#impact">
+        <span class="icon">&#127793;</span>
+        <span data-lang="fr">Mon Impact</span>
+        <span data-lang="en">My Impact</span>
+      </a>
+      <a href="#verification">
+        <span class="icon">&#128279;</span>
+        <span data-lang="fr">V&eacute;rification</span>
+        <span data-lang="en">Verification</span>
+      </a>
+      <a href="#historique">
+        <span class="icon">&#128197;</span>
+        <span data-lang="fr">Historique</span>
+        <span data-lang="en">History</span>
+      </a>
+    </div>
+    <div class="sidebar-bottom">
+      <a href="#" data-lang="fr">Aide</a>
+      <a href="#" data-lang="en">Help</a>
+      <a href="#" data-lang="fr">D&eacute;connexion</a>
+      <a href="#" data-lang="en">Log out</a>
+    </div>
+  </aside>
+
+  <!-- ─── MAIN ─── -->
+  <div class="portal-main">
+
+    <!-- Top bar -->
+    <header class="portal-topbar">
+      <div class="greeting">
+        <span data-lang="fr">Bonjour, Sophia</span>
+        <span data-lang="en">Hello, Sophia</span>
+      </div>
+      <div class="topbar-actions">
+        <button class="lang-toggle">EN</button>
+        <span class="notif-bell">&#128276;<span class="dot"></span></span>
+        <span class="avatar">SB</span>
+      </div>
+    </header>
+
+    <div class="portal-content">
+
+      <!-- ─── SUBSCRIPTION STATUS ─── -->
+      <div class="p-card" id="abonnement">
+        <h2>
+          <span data-lang="fr">Mon Abonnement</span>
+          <span data-lang="en">My Subscription</span>
+        </h2>
+        <ul class="field-list">
+          <li>
+            <span class="fl-label" data-lang="fr">Statut</span>
+            <span class="fl-label" data-lang="en">Status</span>
+            <span class="fl-value"><span class="badge badge-green" data-lang="fr">Actif</span><span class="badge badge-green" data-lang="en">Active</span></span>
+          </li>
+          <li>
+            <span class="fl-label">Plan</span>
+            <span class="fl-value">
+              <span data-lang="fr">Bwat Rek&ograve;lt &mdash; $90/trimestre</span>
+              <span data-lang="en">Harvest Box &mdash; $90/quarter</span>
+            </span>
+          </li>
+          <li>
+            <span class="fl-label" data-lang="fr">Prochaine bo&icirc;te</span>
+            <span class="fl-label" data-lang="en">Next box</span>
+            <span class="fl-value">15 juin 2026</span>
+          </li>
+          <li>
+            <span class="fl-label" data-lang="fr">M&eacute;thode de paiement</span>
+            <span class="fl-label" data-lang="en">Payment method</span>
+            <span class="fl-value">Coinbase Commerce (USDC)</span>
+          </li>
+          <li>
+            <span class="fl-label" data-lang="fr">Membre depuis</span>
+            <span class="fl-label" data-lang="en">Member since</span>
+            <span class="fl-value">1 octobre 2025</span>
+          </li>
+        </ul>
+        <div style="margin-top:1.25rem; display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="#" class="btn btn-secondary btn-sm" data-lang="fr">Modifier l'adresse</a>
+          <a href="#" class="btn btn-secondary btn-sm" data-lang="en">Change address</a>
+          <a href="#" class="btn btn-secondary btn-sm" data-lang="fr">Mettre en pause</a>
+          <a href="#" class="btn btn-secondary btn-sm" data-lang="en">Pause subscription</a>
+          <a href="#" class="btn btn-secondary btn-sm" style="border-color:#c1292e; color:#c1292e;" data-lang="fr">Annuler</a>
+          <a href="#" class="btn btn-secondary btn-sm" style="border-color:#c1292e; color:#c1292e;" data-lang="en">Cancel</a>
+        </div>
+      </div>
+
+      <!-- ─── NEXT BOX ─── -->
+      <div class="p-card" id="bwat">
+        <h2>
+          <span data-lang="fr">Votre prochaine Bwat Rek&ograve;lt</span>
+          <span data-lang="en">Your next Harvest Box</span>
+        </h2>
+        <div class="product-grid">
+          <div class="product-tile">
+            <div class="prod-icon">&#127807;</div>
+            <div class="prod-name" data-lang="fr">Moringa en poudre</div>
+            <div class="prod-name" data-lang="en">Moringa powder</div>
+            <div class="prod-status" data-lang="fr">En pr&eacute;paration</div>
+            <div class="prod-status" data-lang="en">Being prepared</div>
+          </div>
+          <div class="product-tile">
+            <div class="prod-icon">&#128167;</div>
+            <div class="prod-name" data-lang="fr">Huile de ricin</div>
+            <div class="prod-name" data-lang="en">Castor oil</div>
+            <div class="prod-status" data-lang="fr">En pressage</div>
+            <div class="prod-status" data-lang="en">Being pressed</div>
+          </div>
+          <div class="product-tile">
+            <div class="prod-icon">&#9749;</div>
+            <div class="prod-name" data-lang="fr">Caf&eacute; ha&iuml;tien</div>
+            <div class="prod-name" data-lang="en">Haitian coffee</div>
+            <div class="prod-status" data-lang="fr">Torr&eacute;fi&eacute;</div>
+            <div class="prod-status" data-lang="en">Roasted</div>
+          </div>
+          <div class="product-tile">
+            <div class="prod-icon">&#127798;</div>
+            <div class="prod-name" data-lang="fr">M&eacute;lange d'&eacute;pices</div>
+            <div class="prod-name" data-lang="en">Spice blend</div>
+            <div class="prod-status badge badge-green" data-lang="fr">Pr&ecirc;t</div>
+            <div class="prod-status badge badge-green" data-lang="en">Ready</div>
+          </div>
+          <div class="product-tile">
+            <div class="prod-icon">&#127855;</div>
+            <div class="prod-name" data-lang="fr">Miel</div>
+            <div class="prod-name" data-lang="en">Honey</div>
+            <div class="prod-status" data-lang="fr">R&eacute;colt&eacute;</div>
+            <div class="prod-status" data-lang="en">Harvested</div>
+          </div>
+          <div class="product-tile">
+            <div class="prod-icon">&#129389;</div>
+            <div class="prod-name" data-lang="fr">Mangue s&eacute;ch&eacute;e</div>
+            <div class="prod-name" data-lang="en">Dried mango</div>
+            <div class="prod-status" data-lang="fr">En s&eacute;chage</div>
+            <div class="prod-status" data-lang="en">Drying</div>
+          </div>
+          <div class="product-tile">
+            <div class="prod-icon">&#127873;</div>
+            <div class="prod-name" data-lang="fr">Surprise saisonni&egrave;re</div>
+            <div class="prod-name" data-lang="en">Seasonal surprise</div>
+            <div class="prod-status" style="font-style:italic;">???</div>
+          </div>
+        </div>
+        <p style="margin-top:1rem; font-size:0.85rem; color:var(--text-light);">
+          <span data-lang="fr">Produits du site Anse-&agrave;-Veau, d&eacute;partement Nippes.</span>
+          <span data-lang="en">Products from Anse-&agrave;-Veau site, Nippes department.</span>
+        </p>
+      </div>
+
+      <!-- ─── YOUR YOUTH ─── -->
+      <div class="p-card" id="jeune">
+        <h2>
+          <span data-lang="fr">Votre jeune parrain&eacute;</span>
+          <span data-lang="en">Your sponsored youth</span>
+        </h2>
+        <div style="display:flex; gap:24px; align-items:start; flex-wrap:wrap; margin-bottom:1.5rem;">
+          <div class="youth-photo">Photo</div>
+          <div>
+            <h3 style="margin-bottom:4px;">Marie-Claire D.</h3>
+            <p style="font-size:0.875rem; color:var(--text-light); margin-bottom:2px;">
+              <span data-lang="fr">Site 0 &mdash; Agrikilt&egrave; / Agricultrice</span>
+              <span data-lang="en">Site 0 &mdash; Farmer</span>
+            </p>
+            <p style="font-size:0.8rem; color:var(--text-light);">
+              <span data-lang="fr">19 ans &middot; 3 trimestres compl&eacute;t&eacute;s &middot; Moringa</span>
+              <span data-lang="en">19 years old &middot; 3 quarters completed &middot; Moringa</span>
+            </p>
+          </div>
+        </div>
+
+        <h3 style="font-size:0.95rem;">
+          <span data-lang="fr">Paiements v&eacute;rifi&eacute;s</span>
+          <span data-lang="en">Verified payments</span>
+        </h3>
+        <table class="p-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th data-lang="fr">Montant</th>
+              <th data-lang="en">Amount</th>
+              <th data-lang="fr">Cat&eacute;gorie</th>
+              <th data-lang="en">Category</th>
+              <th>BaseScan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>31 mars 2026</td>
+              <td>$63.00</td>
+              <td data-lang="fr">Salaire</td>
+              <td data-lang="en">Salary</td>
+              <td><a href="#" class="bs-link">0x3f7a...c821</a></td>
+            </tr>
+            <tr>
+              <td>31 d&eacute;c. 2025</td>
+              <td>$63.00</td>
+              <td data-lang="fr">Salaire</td>
+              <td data-lang="en">Salary</td>
+              <td><a href="#" class="bs-link">0x8b2e...f094</a></td>
+            </tr>
+            <tr>
+              <td>30 sept. 2025</td>
+              <td>$63.00</td>
+              <td data-lang="fr">Salaire</td>
+              <td data-lang="en">Salary</td>
+              <td><a href="#" class="bs-link">0xa1d5...7e32</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.8rem; color:var(--text-light); margin-top:0.75rem;">
+          <span data-lang="fr">Chaque paiement est v&eacute;rifiable. Cliquez sur le lien BaseScan.</span>
+          <span data-lang="en">Every payment is verifiable. Click the BaseScan link.</span>
+        </p>
+      </div>
+
+      <!-- ─── IMPACT ─── -->
+      <div class="p-card" id="impact">
+        <h2>
+          <span data-lang="fr">Votre impact</span>
+          <span data-lang="en">Your impact</span>
+        </h2>
+        <div class="kpi-row">
+          <div class="kpi-card-portal">
+            <div class="kpi-num">$270</div>
+            <div class="kpi-lbl" data-lang="fr">Total investi</div>
+            <div class="kpi-lbl" data-lang="en">Total invested</div>
+          </div>
+          <div class="kpi-card-portal">
+            <div class="kpi-num">3</div>
+            <div class="kpi-lbl" data-lang="fr">Trimestres actifs</div>
+            <div class="kpi-lbl" data-lang="en">Active quarters</div>
+          </div>
+          <div class="kpi-card-portal">
+            <div class="kpi-num gold">$13.50</div>
+            <div class="kpi-lbl" data-lang="fr">Micro-&eacute;quit&eacute; g&eacute;n&eacute;r&eacute;e</div>
+            <div class="kpi-lbl" data-lang="en">Micro-equity generated</div>
+          </div>
+          <div class="kpi-card-portal">
+            <div class="kpi-num">21</div>
+            <div class="kpi-lbl" data-lang="fr">Produits re&ccedil;us</div>
+            <div class="kpi-lbl" data-lang="en">Products received</div>
+          </div>
+        </div>
+
+        <div class="info-block gold" style="margin-top:0;">
+          <p style="margin-bottom:0;">
+            <span data-lang="fr"><strong>Vous avez financ&eacute; 3 trimestres de travail.</strong> En tant qu'abonn&eacute;, vous ne poss&eacute;dez pas de parts. Votre abonnement g&eacute;n&egrave;re des parts pour le jeune que vous parrainez. C'est leur coop&eacute;rative. Pas la v&ocirc;tre.</span>
+            <span data-lang="en"><strong>You funded 3 quarters of work.</strong> As a subscriber, you don't own shares. Your subscription generates shares for the youth you sponsor. It's their cooperative. Not yours.</span>
+          </p>
+        </div>
+        <p style="font-size:0.85rem; color:var(--text-light);">
+          <span data-lang="fr">Votre r&ocirc;le: client et t&eacute;moin. Leur r&ocirc;le: propri&eacute;taire et producteur.</span>
+          <span data-lang="en">Your role: customer and witness. Their role: owner and producer.</span>
+        </p>
+
+        <!-- Equity progress bar for the youth -->
+        <div style="margin-top:1.25rem;">
+          <p style="font-size:0.8rem; font-weight:600; margin-bottom:0.25rem;">
+            <span data-lang="fr">Parts coop&eacute;ratives de Marie-Claire</span>
+            <span data-lang="en">Marie-Claire's cooperative shares</span>
+          </p>
+          <div class="progress-wrap">
+            <div class="progress-bar"><div class="fill" style="width:18.75%;"></div></div>
+            <div class="progress-label">
+              <span data-lang="fr">3 trimestres sur 16 pour le niveau &laquo; Fondat&egrave; &raquo;</span>
+              <span data-lang="en">3 of 16 quarters for "Founder" level</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── BLOCKCHAIN VERIFICATION ─── -->
+      <div class="p-card" id="verification">
+        <h2>
+          <span data-lang="fr">V&eacute;rification blockchain</span>
+          <span data-lang="en">Blockchain verification</span>
+        </h2>
+        <p style="font-size:0.85rem; color:var(--text-light); margin-bottom:1rem;">
+          <span data-lang="fr">Chaque paiement que vous avez effectu&eacute;, avec la preuve cryptographique.</span>
+          <span data-lang="en">Every payment you've made, with cryptographic proof.</span>
+        </p>
+        <div style="overflow-x:auto;">
+          <table class="p-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th data-lang="fr">Montant</th>
+                <th data-lang="en">Amount</th>
+                <th data-lang="fr">Salaire (70%)</th>
+                <th data-lang="en">Salary (70%)</th>
+                <th data-lang="fr">&Eacute;quit&eacute; (15%)</th>
+                <th data-lang="en">Equity (15%)</th>
+                <th data-lang="fr">Op&eacute;rations (10%)</th>
+                <th data-lang="en">Operations (10%)</th>
+                <th data-lang="fr">Livres (3%)</th>
+                <th data-lang="en">Books (3%)</th>
+                <th data-lang="fr">Recherche (2%)</th>
+                <th data-lang="en">Research (2%)</th>
+                <th>Hash</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1 avr. 2026</td>
+                <td>$90.00</td>
+                <td>$63.00</td>
+                <td>$13.50</td>
+                <td>$9.00</td>
+                <td>$2.70</td>
+                <td>$1.80</td>
+                <td><a href="#" class="bs-link">0x3f7a...c821</a></td>
+              </tr>
+              <tr>
+                <td>1 janv. 2026</td>
+                <td>$90.00</td>
+                <td>$63.00</td>
+                <td>$13.50</td>
+                <td>$9.00</td>
+                <td>$2.70</td>
+                <td>$1.80</td>
+                <td><a href="#" class="bs-link">0x8b2e...f094</a></td>
+              </tr>
+              <tr>
+                <td>1 oct. 2025</td>
+                <td>$90.00</td>
+                <td>$63.00</td>
+                <td>$13.50</td>
+                <td>$9.00</td>
+                <td>$2.70</td>
+                <td>$1.80</td>
+                <td><a href="#" class="bs-link">0xa1d5...7e32</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ─── HISTORY ─── -->
+      <div class="p-card" id="historique">
+        <h2>
+          <span data-lang="fr">Historique de vos bo&icirc;tes</span>
+          <span data-lang="en">Your box history</span>
+        </h2>
+        <table class="p-table">
+          <thead>
+            <tr>
+              <th data-lang="fr">Trimestre</th>
+              <th data-lang="en">Quarter</th>
+              <th data-lang="fr">Date d'envoi</th>
+              <th data-lang="en">Ship date</th>
+              <th data-lang="fr">Suivi</th>
+              <th data-lang="en">Tracking</th>
+              <th data-lang="fr">Almanach</th>
+              <th data-lang="en">Almanac</th>
+              <th data-lang="fr">Re&ccedil;u</th>
+              <th data-lang="en">Receipt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Q1 2026</td>
+              <td>5 avr. 2026</td>
+              <td><a href="#" data-lang="fr">Suivre le colis</a><a href="#" data-lang="en">Track package</a></td>
+              <td><a href="#" data-lang="fr">T&eacute;l&eacute;charger PDF</a><a href="#" data-lang="en">Download PDF</a></td>
+              <td><a href="#" data-lang="fr">T&eacute;l&eacute;charger</a><a href="#" data-lang="en">Download</a></td>
+            </tr>
+            <tr>
+              <td>Q4 2025</td>
+              <td>20 d&eacute;c. 2025</td>
+              <td><span class="badge badge-green" data-lang="fr">Livr&eacute;</span><span class="badge badge-green" data-lang="en">Delivered</span></td>
+              <td><a href="#" data-lang="fr">T&eacute;l&eacute;charger PDF</a><a href="#" data-lang="en">Download PDF</a></td>
+              <td><a href="#" data-lang="fr">T&eacute;l&eacute;charger</a><a href="#" data-lang="en">Download</a></td>
+            </tr>
+            <tr>
+              <td>Q3 2025</td>
+              <td>22 sept. 2025</td>
+              <td><span class="badge badge-green" data-lang="fr">Livr&eacute;</span><span class="badge badge-green" data-lang="en">Delivered</span></td>
+              <td><a href="#" data-lang="fr">T&eacute;l&eacute;charger PDF</a><a href="#" data-lang="en">Download PDF</a></td>
+              <td><a href="#" data-lang="fr">T&eacute;l&eacute;charger</a><a href="#" data-lang="en">Download</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div><!-- .portal-content -->
+  </div><!-- .portal-main -->
+</div><!-- .portal-wrap -->
+
+<script src="../lang.js"></script>
+</body>
+</html>

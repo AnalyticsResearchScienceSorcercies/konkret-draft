@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portail | KONKRET Haiti</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body style="background:#f8f7f4;display:flex;align-items:center;justify-content:center;min-height:100vh">
+
+<div style="width:100%;max-width:400px;padding:2rem">
+  <div style="text-align:center;margin-bottom:2rem">
+    <a href="/" style="font-family:'Source Serif 4',serif;font-size:2rem;font-weight:700;color:var(--navy);text-decoration:none">KONKRET</a>
+  </div>
+  <div class="card" style="padding:2.5rem">
+    <h2 style="text-align:center;margin-bottom:1.5rem" data-lang="fr">Se connecter</h2>
+    <h2 style="text-align:center;margin-bottom:1.5rem" data-lang="en">Log in</h2>
+    <form>
+      <div style="margin-bottom:1rem">
+        <label data-lang="fr">Adresse courriel</label><label data-lang="en">Email address</label>
+        <input type="email" required style="width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:var(--radius);font-size:1rem;margin-top:0.25rem">
+      </div>
+      <div style="margin-bottom:1.5rem">
+        <label data-lang="fr">Mot de passe</label><label data-lang="en">Password</label>
+        <input type="password" required style="width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:var(--radius);font-size:1rem;margin-top:0.25rem">
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;font-size:1rem" data-lang="fr">Se connecter</button>
+      <button type="submit" class="btn btn-primary" style="width:100%;font-size:1rem" data-lang="en">Log in</button>
+    </form>
+    <div style="text-align:center;margin-top:1.5rem;font-size:0.9rem">
+      <p><a href="#" data-lang="fr">Mot de passe oublie?</a><a href="#" data-lang="en">Forgot password?</a></p>
+      <p style="margin-top:0.5rem" data-lang="fr">Pas encore de compte? <a href="/souscrire.html">S'inscrire</a></p>
+      <p style="margin-top:0.5rem" data-lang="en">No account yet? <a href="/souscrire.html">Sign up</a></p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:1rem">
+    <button class="lang-toggle" style="border-color:var(--navy);color:var(--navy)">EN</button>
+  </div>
+</div>
+
+<script src="lang.js"></script>
+</body>
+</html>

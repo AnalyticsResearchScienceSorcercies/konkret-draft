@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Zero | KONKRET Haiti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #1a2332; --green: #2d6a4f; --gold: #d4a843; --white: #fafafa;
+  --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --text-secondary: #6b7280; --border: #e5e7eb;
+}
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+h1, h2, h3 { font-family: 'Source Serif 4', serif; }
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+nav { background: var(--navy); padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+nav .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+nav .logo { color: var(--gold); font-weight: 700; font-size: 20px; letter-spacing: 1px; }
+nav .links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+nav .links a { color: var(--white); font-size: 14px; font-weight: 500; }
+nav .links a:hover { color: var(--gold); text-decoration: none; }
+.lang-toggle { background: var(--gold); color: var(--navy); border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 13px; }
+.hero { background: var(--navy); color: var(--white); padding: 80px 0 60px; text-align: center; }
+.hero h1 { font-size: 42px; margin-bottom: 16px; }
+.hero .subtitle { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 650px; margin: 0 auto; }
+.gold { color: var(--gold); }
+section { padding: 60px 0; }
+section:nth-child(even) { background: var(--card); }
+section h2 { font-size: 28px; margin-bottom: 24px; color: var(--navy); }
+section h3 { font-size: 20px; margin-bottom: 16px; color: var(--green); }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+.stat-card { text-align: center; padding: 24px 20px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; }
+.stat-card .number { font-size: 36px; font-weight: 700; color: var(--green); display: block; margin-bottom: 4px; }
+.stat-card .label { font-size: 14px; color: var(--text-secondary); }
+.map-placeholder { background: linear-gradient(135deg, #2d6a4f 0%, #1a2332 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6); font-size: 14px; min-height: 400px; margin: 24px 0; text-align: center; padding: 24px; position: relative; }
+.map-labels { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 24px; }
+.map-label { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 12px 16px; color: var(--white); font-size: 13px; }
+.map-label .icon { margin-right: 6px; }
+.metric-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+.metric-table th, .metric-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); font-size: 15px; }
+.metric-table th { background: var(--navy); color: var(--white); font-weight: 600; font-size: 14px; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+.status-active { background: rgba(45,106,79,0.15); color: var(--green); }
+.status-progress { background: rgba(212,168,67,0.15); color: #b8942e; }
+.status-needed { background: rgba(193,41,46,0.15); color: #c1292e; }
+.photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0; }
+.photo-placeholder { background: linear-gradient(135deg, var(--navy), var(--green)); border-radius: 8px; min-height: 180px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); font-size: 13px; }
+.last-updated { text-align: center; color: var(--text-secondary); font-size: 14px; padding: 16px 0; border-top: 1px solid var(--border); margin-top: 32px; }
+.btn { display: inline-block; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 15px; transition: all 0.2s; }
+.btn-primary { background: var(--green); color: var(--white); }
+.btn-primary:hover { background: #245a42; text-decoration: none; }
+.btn-gold { background: var(--gold); color: var(--navy); }
+.btn-gold:hover { background: #c49a38; text-decoration: none; }
+footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 48px 0 32px; }
+footer .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; }
+footer h4 { color: var(--gold); margin-bottom: 16px; font-family: 'Inter', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+footer a { color: rgba(255,255,255,0.7); font-size: 14px; }
+footer a:hover { color: var(--gold); }
+footer ul { list-style: none; }
+footer ul li { margin-bottom: 8px; }
+.footer-bottom { text-align: center; margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; }
+@media (max-width: 768px) {
+  .hero h1 { font-size: 28px; }
+  .hero { padding: 48px 0 40px; }
+  section { padding: 40px 0; }
+  .card { padding: 20px; }
+  .map-placeholder { min-height: 250px; }
+}
+[data-lang="en"] { display: none; }
+body.lang-en [data-lang="fr"] { display: none; }
+body.lang-en [data-lang="en"] { display: revert; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="logo">KONKRET</a>
+    <div class="links">
+      <a href="/notre-histoire.html">Notre histoire</a>
+      <a href="/partenaires/rfl.html">Partenaires</a>
+      <a href="/transparence.html">Transparence</a>
+      <a href="/impact-economique.html">Impact</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/portail.html">Portail</a>
+      <button class="lang-toggle" onclick="toggleLang()">EN</button>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="container">
+    <h1>
+      <span data-lang="fr">Site Zero</span>
+      <span data-lang="en">Site Zero</span>
+    </h1>
+    <p class="subtitle">
+      <span data-lang="fr">Le premier. Le modele. Cayes-Jacmel. Tout ce que vous voyez ici sera replique 24 fois.</span>
+      <span data-lang="en">The first. The model. Cayes-Jacmel. Everything you see here will be replicated 24 times.</span>
+    </p>
+  </div>
+</div>
+
+<!-- LAYOUT MAP -->
+<section>
+  <div class="container">
+    <h2>
+      <span data-lang="fr">Plan du site</span>
+      <span data-lang="en">Site Layout</span>
+    </h2>
+    <div class="map-placeholder">
+      <span data-lang="fr">Photo aerienne annotee / Carte illustree du Site Zero<br>[Image placeholder]</span>
+      <span data-lang="en">Annotated aerial photo / Illustrated map of Site Zero<br>[Image placeholder]</span>
+    </div>
+    <div class="map-labels">
+      <div class="map-label" style="background: rgba(45,106,79,0.1); color: var(--text); border-color: var(--green);">
+        <span data-lang="fr">Zone de culture (moringa, legumes)</span>
+        <span data-lang="en">Growing zone (moringa, vegetables)</span>
+      </div>
+      <div class="map-label" style="background: rgba(45,106,79,0.1); color: var(--text); border-color: var(--green);">
+        <span data-lang="fr">Lits sureleves (Kratky)</span>
+        <span data-lang="en">Raised beds (Kratky)</span>
+      </div>
+      <div class="map-label" style="background: rgba(45,106,79,0.1); color: var(--text); border-color: var(--green);">
+        <span data-lang="fr">Zone d'elevage (lapins, cabris)</span>
+        <span data-lang="en">Livestock zone (rabbits, goats)</span>
+      </div>
+      <div class="map-label" style="background: rgba(45,106,79,0.1); color: var(--text); border-color: var(--green);">
+        <span data-lang="fr">Station d'inscription</span>
+        <span data-lang="en">Enrollment station</span>
+      </div>
+      <div class="map-label" style="background: rgba(45,106,79,0.1); color: var(--text); border-color: var(--green);">
+        <span data-lang="fr">Bibliotheque</span>
+        <span data-lang="en">Library</span>
+      </div>
+      <div class="map-label" style="background: rgba(45,106,79,0.1); color: var(--text); border-color: var(--green);">
+        <span data-lang="fr">Four BonZeb</span>
+        <span data-lang="en">BonZeb kiln</span>
+      </div>
+      <div class="map-label" style="background: rgba(45,106,79,0.1); color: var(--text); border-color: var(--green);">
+        <span data-lang="fr">Zone de transformation</span>
+        <span data-lang="en">Processing zone</span>
+      </div>
+      <div class="map-label" style="background: rgba(45,106,79,0.1); color: var(--text); border-color: var(--green);">
+        <span data-lang="fr">Toilette SOIL</span>
+        <span data-lang="en">SOIL toilet</span>
+      </div>
+      <div class="map-label" style="background: rgba(45,106,79,0.1); color: var(--text); border-color: var(--green);">
+        <span data-lang="fr">Terrain de basketball</span>
+        <span data-lang="en">Basketball court</span>
+      </div>
+      <div class="map-label" style="background: rgba(45,106,79,0.1); color: var(--text); border-color: var(--green);">
+        <span data-lang="fr">Salles de classe</span>
+        <span data-lang="en">Classrooms</span>
+      </div>
+      <div class="map-label" style="background: rgba(45,106,79,0.1); color: var(--text); border-color: var(--green);">
+        <span data-lang="fr">Jardins</span>
+        <span data-lang="en">Gardens</span>
+      </div>
+      <div class="map-label" style="background: rgba(45,106,79,0.1); color: var(--text); border-color: var(--green);">
+        <span data-lang="fr">Clapier a lapins</span>
+        <span data-lang="en">Rabbit hutch</span>
+      </div>
+      <div class="map-label" style="background: rgba(45,106,79,0.1); color: var(--text); border-color: var(--green);">
+        <span data-lang="fr">Perimetre en bambou</span>
+        <span data-lang="en">Bamboo perimeter</span>
+      </div>
+      <div class="map-label" style="background: rgba(45,106,79,0.1); color: var(--text); border-color: var(--green);">
+        <span data-lang="fr">Zone de stockage charbon</span>
+        <span data-lang="en">Charcoal staging area</span>
+      </div>
+      <div class="map-label" style="background: rgba(45,106,79,0.1); color: var(--text); border-color: var(--green);">
+        <span data-lang="fr">Point d'eau propre</span>
+        <span data-lang="en">Clean water point</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPMENT STATUS -->
+<section>
+  <div class="container">
+    <h2>
+      <span data-lang="fr">Inventaire et statut des equipements</span>
+      <span data-lang="en">Equipment Inventory &amp; Status</span>
+    </h2>
+    <table class="metric-table">
+      <thead>
+        <tr>
+          <th data-lang="fr">Equipement</th><th data-lang="en">Equipment</th>
+          <th data-lang="fr">Statut</th><th data-lang="en">Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-lang="fr">Station d'inscription</td><td data-lang="en">Enrollment station</td>
+          <td><span class="status-badge status-active" data-lang="fr">En service</span><span class="status-badge status-active" data-lang="en">In use</span></td>
+          <td>--</td>
+        </tr>
+        <tr>
+          <td data-lang="fr">Lecteurs NFC (x3)</td><td data-lang="en">NFC readers (x3)</td>
+          <td><span class="status-badge status-active" data-lang="fr">En service</span><span class="status-badge status-active" data-lang="en">In use</span></td>
+          <td>--</td>
+        </tr>
+        <tr>
+          <td data-lang="fr">Cartes NFC (50)</td><td data-lang="en">NFC cards (50)</td>
+          <td><span class="status-badge status-active" data-lang="fr">40 emises</span><span class="status-badge status-active" data-lang="en">40 issued</span></td>
+          <td data-lang="fr">10 restantes</td><td data-lang="en">10 remaining</td>
+        </tr>
+        <tr>
+          <td data-lang="fr">Imprimante</td><td data-lang="en">Printer</td>
+          <td><span class="status-badge status-needed" data-lang="fr">Recherche</span><span class="status-badge status-needed" data-lang="en">Needed</span></td>
+          <td data-lang="fr">Financer: $2,000</td><td data-lang="en">Fund: $2,000</td>
+        </tr>
+        <tr>
+          <td>Four BonZeb / BonZeb kiln</td>
+          <td><span class="status-badge status-active" data-lang="fr">En service</span><span class="status-badge status-active" data-lang="en">In use</span></td>
+          <td>--</td>
+        </tr>
+        <tr>
+          <td data-lang="fr">Filtres eau (x5)</td><td data-lang="en">Water filters (x5)</td>
+          <td><span class="status-badge status-active" data-lang="fr">En service</span><span class="status-badge status-active" data-lang="en">In use</span></td>
+          <td>--</td>
+        </tr>
+        <tr>
+          <td data-lang="fr">Bibliotheque (50 livres)</td><td data-lang="en">Library (50 books)</td>
+          <td><span class="status-badge status-progress" data-lang="fr">35 livres</span><span class="status-badge status-progress" data-lang="en">35 books</span></td>
+          <td data-lang="fr">15 a financer</td><td data-lang="en">15 to fund</td>
+        </tr>
+        <tr>
+          <td>Toilette SOIL / SOIL toilet</td>
+          <td><span class="status-badge status-active" data-lang="fr">En service</span><span class="status-badge status-active" data-lang="en">In use</span></td>
+          <td>--</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- YOUTH COUNT -->
+<section>
+  <div class="container">
+    <h2>
+      <span data-lang="fr">Jeunes</span>
+      <span data-lang="en">Youth</span>
+    </h2>
+    <div class="card-grid">
+      <div class="stat-card">
+        <span class="number">[live]</span>
+        <span class="label" data-lang="fr">Jeunes inscrits</span>
+        <span class="label" data-lang="en">Youth enrolled</span>
+      </div>
+      <div class="stat-card">
+        <span class="number">[live]</span>
+        <span class="label" data-lang="fr">Actifs ce trimestre</span>
+        <span class="label" data-lang="en">Active this quarter</span>
+      </div>
+      <div class="stat-card">
+        <span class="number">[live]</span>
+        <span class="label" data-lang="fr">Trimestres completes (total)</span>
+        <span class="label" data-lang="en">Quarters completed (total)</span>
+      </div>
+      <div class="stat-card">
+        <span class="number">[live]</span>
+        <span class="label" data-lang="fr">Parts cooperatives emises</span>
+        <span class="label" data-lang="en">Cooperative shares issued</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTOS -->
+<section>
+  <div class="container">
+    <h2>
+      <span data-lang="fr">Photos recentes</span>
+      <span data-lang="en">Recent Photos</span>
+    </h2>
+    <div class="photo-grid">
+      <div class="photo-placeholder">Photo 1</div>
+      <div class="photo-placeholder">Photo 2</div>
+      <div class="photo-placeholder">Photo 3</div>
+      <div class="photo-placeholder">Photo 4</div>
+      <div class="photo-placeholder">Photo 5</div>
+      <div class="photo-placeholder">Photo 6</div>
+    </div>
+    <div class="last-updated">
+      <span data-lang="fr">Derniere mise a jour: 6 avril 2026</span>
+      <span data-lang="en">Last updated: April 6, 2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="text-align: center;">
+  <div class="container">
+    <h2>
+      <span data-lang="fr">Ce site a coute $3,600 a lancer. Financez le prochain.</span>
+      <span data-lang="en">This site cost $3,600 to launch. Fund the next one.</span>
+    </h2>
+    <a href="#" class="btn btn-gold" data-lang="fr">Financer une franchise... $3,600</a>
+    <a href="#" class="btn btn-gold" data-lang="en">Fund a franchise... $3,600</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <h4>KONKRET</h4>
+      <p style="font-size: 14px;" data-lang="fr">Un circuit ferme. De l'achat au terrain.</p>
+      <p style="font-size: 14px;" data-lang="en">A closed circuit. From purchase to ground.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="/notre-histoire.html" data-lang="fr">Notre histoire</a><a href="/notre-histoire.html" data-lang="en">Our Story</a></li>
+        <li><a href="/equipe.html" data-lang="fr">L'equipe</a><a href="/equipe.html" data-lang="en">The Team</a></li>
+        <li><a href="/transparence.html" data-lang="fr">Transparence</a><a href="/transparence.html" data-lang="en">Transparency</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info@konkret-haiti.com">info@konkret-haiti.com</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom" style="grid-column: 1 / -1;">&copy; 2026 KONKRET Haiti.</div>
+  </div>
+</footer>
+
+<script>
+function toggleLang() {
+  document.body.classList.toggle('lang-en');
+  document.querySelector('.lang-toggle').textContent = document.body.classList.contains('lang-en') ? 'FR' : 'EN';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RFL | Partenaires | KONKRET Haiti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #1a2332;
+  --green: #2d6a4f;
+  --gold: #d4a843;
+  --white: #fafafa;
+  --bg: #f8f7f4;
+  --card: #ffffff;
+  --text: #1a1a1a;
+  --text-secondary: #6b7280;
+  --border: #e5e7eb;
+}
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+h1, h2, h3 { font-family: 'Source Serif 4', serif; }
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+/* NAV */
+nav { background: var(--navy); padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+nav .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+nav .logo { color: var(--gold); font-weight: 700; font-size: 20px; letter-spacing: 1px; }
+nav .links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+nav .links a { color: var(--white); font-size: 14px; font-weight: 500; }
+nav .links a:hover { color: var(--gold); text-decoration: none; }
+.lang-toggle { background: var(--gold); color: var(--navy); border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 13px; }
+/* HERO */
+.hero { background: var(--navy); color: var(--white); padding: 80px 0 60px; text-align: center; }
+.hero h1 { font-size: 42px; margin-bottom: 16px; }
+.hero .subtitle { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto; }
+.hero .gold { color: var(--gold); }
+/* SECTIONS */
+section { padding: 60px 0; }
+section:nth-child(even) { background: var(--card); }
+section h2 { font-size: 28px; margin-bottom: 24px; color: var(--navy); }
+section h3 { font-size: 20px; margin-bottom: 16px; color: var(--green); }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.stat-card { text-align: center; padding: 32px 24px; }
+.stat-card .number { font-size: 36px; font-weight: 700; color: var(--green); display: block; margin-bottom: 8px; }
+.stat-card .label { font-size: 14px; color: var(--text-secondary); }
+.metric-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+.metric-table th, .metric-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+.metric-table th { background: var(--navy); color: var(--white); font-weight: 600; font-size: 14px; }
+.metric-table td { font-size: 15px; }
+.btn { display: inline-block; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 15px; transition: all 0.2s; }
+.btn-primary { background: var(--green); color: var(--white); }
+.btn-primary:hover { background: #245a42; text-decoration: none; }
+.btn-gold { background: var(--gold); color: var(--navy); }
+.btn-gold:hover { background: #c49a38; text-decoration: none; }
+.breadcrumb { padding: 16px 0; font-size: 14px; color: var(--text-secondary); }
+.breadcrumb a { color: var(--text-secondary); }
+.img-placeholder { background: linear-gradient(135deg, var(--navy) 0%, var(--green) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); font-size: 14px; min-height: 200px; margin: 24px 0; }
+blockquote { border-left: 4px solid var(--gold); padding: 16px 24px; margin: 24px 0; background: rgba(212,168,67,0.08); font-style: italic; }
+.highlight-box { background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.2); border-radius: 12px; padding: 24px 32px; margin: 24px 0; }
+/* FOOTER */
+footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 48px 0 32px; }
+footer .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; }
+footer h4 { color: var(--gold); margin-bottom: 16px; font-family: 'Inter', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+footer a { color: rgba(255,255,255,0.7); font-size: 14px; }
+footer a:hover { color: var(--gold); }
+footer ul { list-style: none; }
+footer ul li { margin-bottom: 8px; }
+.footer-bottom { text-align: center; margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; }
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 28px; }
+  .hero { padding: 48px 0 40px; }
+  section { padding: 40px 0; }
+  .card { padding: 20px; }
+  nav .links { gap: 12px; }
+}
+/* LANG */
+[data-lang="en"] { display: none; }
+body.lang-en [data-lang="fr"] { display: none; }
+body.lang-en [data-lang="en"] { display: revert; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="logo">KONKRET</a>
+    <div class="links">
+      <a href="/notre-histoire.html">Notre histoire</a>
+      <a href="/partenaires/rfl.html">Partenaires</a>
+      <a href="/transparence.html">Transparence</a>
+      <a href="/impact-economique.html">Impact</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/portail.html">Portail</a>
+      <button class="lang-toggle" onclick="toggleLang()">EN</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">KONKRET</a> / <a href="/partenaires/rfl.html" data-lang="fr">Partenaires</a><a href="/partenaires/rfl.html" data-lang="en">Partners</a> / RFL
+  </div>
+</div>
+
+<div class="hero">
+  <div class="container">
+    <h1>
+      <span data-lang="fr">Reparations Finance Lab</span>
+      <span data-lang="en">Reparations Finance Lab</span>
+    </h1>
+    <p class="subtitle">
+      <span data-lang="fr">La couche recherche de KONKRET. Parce que la transparence commence par les données.</span>
+      <span data-lang="en">KONKRET's research layer. Because transparency starts with data.</span>
+    </p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <h2>
+      <span data-lang="fr">Qui sont-ils</span>
+      <span data-lang="en">Who They Are</span>
+    </h2>
+    <div class="card">
+      <div style="display: flex; gap: 32px; align-items: start; flex-wrap: wrap;">
+        <div class="img-placeholder" style="min-width: 200px; min-height: 200px; flex-shrink: 0;">Enith Williams<br>Photo</div>
+        <div>
+          <h3>Enith Williams</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 14px;">
+            <span data-lang="fr">Fondatrice, Reparations Finance Lab</span>
+            <span data-lang="en">Founder, Reparations Finance Lab</span>
+          </p>
+          <p data-lang="fr">
+            Le Reparations Finance Lab (RFL) est un organisme de recherche appliquee dirige par Enith Williams. Le RFL conçoit des outils financiers et des cadres de mesure pour les projets de reparation economique. Leur mission: transformer la recherche en instruments concrets de redistribution.
+          </p>
+          <p data-lang="en">
+            The Reparations Finance Lab (RFL) is an applied research organization led by Enith Williams. RFL designs financial tools and measurement frameworks for economic reparation projects. Their mission: transform research into concrete redistribution instruments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>
+      <span data-lang="fr">Leur role dans KONKRET</span>
+      <span data-lang="en">Their Role in KONKRET</span>
+    </h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>
+          <span data-lang="fr">Couche recherche</span>
+          <span data-lang="en">Research Layer</span>
+        </h3>
+        <p data-lang="fr">
+          Le RFL fournit la rigueur methodologique derriere les chiffres de KONKRET. Validation des modeles CGE, calibration des multiplicateurs d'emploi, et audit des metriques d'impact.
+        </p>
+        <p data-lang="en">
+          RFL provides the methodological rigor behind KONKRET's numbers. Validation of CGE models, employment multiplier calibration, and impact metric auditing.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Black Happiness Index</h3>
+        <p data-lang="fr">
+          Un indicateur composite qui mesure le bien-etre au-dela du PIB. Sante, education, securite, autonomie economique, participation communautaire. Applique sur chaque site KONKRET comme mesure de progres.
+        </p>
+        <p data-lang="en">
+          A composite indicator measuring well-being beyond GDP. Health, education, safety, economic autonomy, community participation. Applied at each KONKRET site as a progress measure.
+        </p>
+      </div>
+      <div class="card">
+        <h3>
+          <span data-lang="fr">Surcharge de recherche (1%)</span>
+          <span data-lang="en">Research Surcharge (1%)</span>
+        </h3>
+        <p data-lang="fr">
+          1% de chaque abonnement finance la recherche du RFL. Ce mecanisme integre garantit que la production de connaissances n'est jamais separee de l'action terrain. Pas de subvention externe necessaire pour la recherche de base.
+        </p>
+        <p data-lang="en">
+          1% of every subscription funds RFL research. This built-in mechanism ensures knowledge production is never separated from ground action. No external grant needed for baseline research.
+        </p>
+      </div>
+      <div class="card">
+        <h3>
+          <span data-lang="fr">Pipeline Ford Foundation</span>
+          <span data-lang="en">Ford Foundation Pipeline</span>
+        </h3>
+        <p data-lang="fr">
+          Le RFL positionne KONKRET dans le pipeline de financement de la Ford Foundation et d'autres bailleurs institutionnels. La recherche produite par le RFL sert de justificatif pour les demandes de subvention a grande echelle.
+        </p>
+        <p data-lang="en">
+          RFL positions KONKRET within the Ford Foundation funding pipeline and other institutional funders. Research produced by RFL serves as justification for large-scale grant applications.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>
+      <span data-lang="fr">Ce que KONKRET leur apporte</span>
+      <span data-lang="en">What KONKRET Brings Them</span>
+    </h2>
+    <div class="card">
+      <p data-lang="fr">
+        Un laboratoire vivant. Des donnees terrain en temps reel sur 25 sites et 310 jeunes. Un cas d'etude unique de developpement extraction-proof avec blockchain. Du materiel pour 5+ publications academiques. Et la preuve que Phi peut etre zero.
+      </p>
+      <p data-lang="en">
+        A living laboratory. Real-time field data across 25 sites and 310 youth. A unique case study in extraction-proof development with blockchain. Material for 5+ academic publications. And the proof that Phi can be zero.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>
+      <span data-lang="fr">Metriques</span>
+      <span data-lang="en">Metrics</span>
+    </h2>
+    <div class="card-grid">
+      <div class="card stat-card">
+        <span class="number">25</span>
+        <span class="label" data-lang="fr">Sites avec bibliotheque</span>
+        <span class="label" data-lang="en">Sites with library</span>
+      </div>
+      <div class="card stat-card">
+        <span class="number">1,250</span>
+        <span class="label" data-lang="fr">Livres distribues</span>
+        <span class="label" data-lang="en">Books distributed</span>
+      </div>
+      <div class="card stat-card">
+        <span class="number">500</span>
+        <span class="label" data-lang="fr">Emprunts/mois</span>
+        <span class="label" data-lang="en">Checkouts/month</span>
+      </div>
+      <div class="card stat-card">
+        <span class="number">1%</span>
+        <span class="label" data-lang="fr">Surcharge recherche integree</span>
+        <span class="label" data-lang="en">Built-in research surcharge</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container" style="text-align: center;">
+    <a href="/transparence.html" class="btn btn-primary" data-lang="fr">Voir la transparence</a>
+    <a href="/transparence.html" class="btn btn-primary" data-lang="en">See transparency</a>
+    &nbsp;&nbsp;
+    <a href="#" class="btn btn-gold" data-lang="fr">Financer 50 livres &mdash; $500</a>
+    <a href="#" class="btn btn-gold" data-lang="en">Fund 50 books &mdash; $500</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <h4>KONKRET</h4>
+      <p style="font-size: 14px;" data-lang="fr">Un circuit ferme. De l'achat au terrain.</p>
+      <p style="font-size: 14px;" data-lang="en">A closed circuit. From purchase to ground.</p>
+    </div>
+    <div>
+      <h4 data-lang="fr">Navigation</h4>
+      <h4 data-lang="en">Navigation</h4>
+      <ul>
+        <li><a href="/notre-histoire.html" data-lang="fr">Notre histoire</a><a href="/notre-histoire.html" data-lang="en">Our Story</a></li>
+        <li><a href="/equipe.html" data-lang="fr">L'equipe</a><a href="/equipe.html" data-lang="en">The Team</a></li>
+        <li><a href="/transparence.html" data-lang="fr">Transparence</a><a href="/transparence.html" data-lang="en">Transparency</a></li>
+        <li><a href="/blog.html" data-lang="fr">Journal de Terrain</a><a href="/blog.html" data-lang="en">Field Journal</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-lang="fr">Operations</h4>
+      <h4 data-lang="en">Operations</h4>
+      <ul>
+        <li><a href="/site-zero.html">Site Zero</a></li>
+        <li><a href="/technologie.html" data-lang="fr">Technologie</a><a href="/technologie.html" data-lang="en">Technology</a></li>
+        <li><a href="/impact-economique.html" data-lang="fr">Impact economique</a><a href="/impact-economique.html" data-lang="en">Economic Impact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info@konkret-haiti.com">info@konkret-haiti.com</a></li>
+        <li><a href="/contact.html" data-lang="fr">Formulaire de contact</a><a href="/contact.html" data-lang="en">Contact form</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom" style="grid-column: 1 / -1;">
+      &copy; 2026 KONKRET Haiti. <span data-lang="fr">Tous droits reserves.</span><span data-lang="en">All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleLang() {
+  document.body.classList.toggle('lang-en');
+  const btn = document.querySelector('.lang-toggle');
+  btn.textContent = document.body.classList.contains('lang-en') ? 'FR' : 'EN';
+}
+</script>
+</body>
+</html>

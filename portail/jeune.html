@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P&ograve;tay J&egrave;n | KONKRET Ayiti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  /* Youth-specific: larger touch targets, warmer feel */
+  body { font-size: 16px; }
+  .portal-content { max-width: 860px; }
+  .p-card h2 { font-size: 1.35rem; }
+  .p-table td, .p-table th { padding: 0.875rem; }
+  .field-list li { padding: 0.75rem 0; }
+  /* Offline-capable indicator */
+  .offline-ready { display: inline-flex; align-items: center; gap: 6px; font-size: 0.7rem; color: var(--green); background: rgba(45,106,79,0.08); padding: 4px 10px; border-radius: 999px; }
+  .offline-ready::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+  /* Warm accent bar on youth cards */
+  .p-card.warm { border-top: 3px solid var(--gold); }
+</style>
+</head>
+<body class="lang-kr">
+
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+
+<div class="portal-wrap">
+
+  <!-- ─── SIDEBAR ─── -->
+  <aside class="portal-sidebar">
+    <div class="sidebar-logo"><a href="/">KONKRET</a></div>
+    <div class="sidebar-nav">
+      <a href="#kat" class="active">
+        <span class="icon">&#128179;</span>
+        <span data-lang="kr">Kat Mwen</span>
+        <span data-lang="fr">Ma Carte</span>
+        <span data-lang="en">My Card</span>
+      </a>
+      <a href="#travay">
+        <span class="icon">&#127793;</span>
+        <span data-lang="kr">Travay Mwen</span>
+        <span data-lang="fr">Mon Travail</span>
+        <span data-lang="en">My Work</span>
+      </a>
+      <a href="#sale">
+        <span class="icon">&#128176;</span>
+        <span data-lang="kr">Sal&egrave; Mwen</span>
+        <span data-lang="fr">Mon Salaire</span>
+        <span data-lang="en">My Pay</span>
+      </a>
+      <a href="#liv">
+        <span class="icon">&#128214;</span>
+        <span data-lang="kr">Bibliyot&egrave;k</span>
+        <span data-lang="fr">Biblioth&egrave;que</span>
+        <span data-lang="en">Library</span>
+      </a>
+      <a href="#ekite">
+        <span class="icon">&#11088;</span>
+        <span data-lang="kr">Ekite Mwen</span>
+        <span data-lang="fr">Mon &Eacute;quit&eacute;</span>
+        <span data-lang="en">My Equity</span>
+      </a>
+      <a href="#sertifikasyon">
+        <span class="icon">&#127942;</span>
+        <span data-lang="kr">S&egrave;tifikasyon</span>
+        <span data-lang="fr">Certifications</span>
+        <span data-lang="en">Certifications</span>
+      </a>
+    </div>
+    <div class="sidebar-bottom">
+      <a href="#" data-lang="kr">&Egrave;d</a>
+      <a href="#" data-lang="fr">Aide</a>
+      <a href="#" data-lang="en">Help</a>
+      <a href="#" data-lang="kr">Dekonekte</a>
+      <a href="#" data-lang="fr">D&eacute;connexion</a>
+      <a href="#" data-lang="en">Log out</a>
+      <div style="margin-top:12px;">
+        <button class="lang-cycle" style="background:var(--gold); color:var(--navy); border:none; padding:6px 14px; border-radius:4px; cursor:pointer; font-weight:600; font-size:0.8rem;">EN</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ─── MAIN ─── -->
+  <div class="portal-main">
+
+    <header class="portal-topbar">
+      <div class="greeting">
+        <span data-lang="kr">Bonjou, Marie-Claire &#128075;</span>
+        <span data-lang="fr">Bonjour, Marie-Claire</span>
+        <span data-lang="en">Hello, Marie-Claire</span>
+      </div>
+      <div class="topbar-actions">
+        <span class="offline-ready">
+          <span data-lang="kr">Konekte</span>
+          <span data-lang="fr">Connect&eacute;</span>
+          <span data-lang="en">Online</span>
+        </span>
+        <button class="lang-cycle" style="background:var(--gold); color:var(--navy); border:none; padding:6px 14px; border-radius:4px; cursor:pointer; font-weight:600; font-size:0.8rem;">EN</button>
+        <span class="notif-bell">&#128276;<span class="dot"></span></span>
+        <span class="avatar">MC</span>
+      </div>
+    </header>
+
+    <div class="portal-content">
+
+      <!-- ─── CARD STATUS ─── -->
+      <div class="p-card warm" id="kat">
+        <h2>
+          <span data-lang="kr">Kat ou</span>
+          <span data-lang="fr">Votre carte</span>
+          <span data-lang="en">Your card</span>
+        </h2>
+
+        <!-- NFC card visual -->
+        <div class="nfc-card" style="margin-bottom:1.5rem;">
+          <div class="card-label">KONKRET AYITI</div>
+          <div class="card-name">Marie-Claire Desrosiers</div>
+          <div class="card-id">SAK-00047-2026</div>
+          <div class="card-balance">2,500 HTG</div>
+          <div class="card-status"><span class="badge badge-green">Aktif</span></div>
+        </div>
+
+        <ul class="field-list">
+          <li>
+            <span class="fl-label">
+              <span data-lang="kr">Nimewo kat</span>
+              <span data-lang="fr">Num&eacute;ro de carte</span>
+              <span data-lang="en">Card number</span>
+            </span>
+            <span class="fl-value" style="font-family:'Courier New',monospace;">SAK-00047-2026</span>
+          </li>
+          <li>
+            <span class="fl-label">
+              <span data-lang="kr">Estati</span>
+              <span data-lang="fr">Statut</span>
+              <span data-lang="en">Status</span>
+            </span>
+            <span class="fl-value">
+              <span class="badge badge-green" data-lang="kr">Aktif</span>
+              <span class="badge badge-green" data-lang="fr">Actif</span>
+              <span class="badge badge-green" data-lang="en">Active</span>
+            </span>
+          </li>
+          <li>
+            <span class="fl-label">
+              <span data-lang="kr">Balans</span>
+              <span data-lang="fr">Solde</span>
+              <span data-lang="en">Balance</span>
+            </span>
+            <span class="fl-value" style="font-size:1.1rem; color:var(--green);">2,500 HTG</span>
+          </li>
+          <li>
+            <span class="fl-label">
+              <span data-lang="kr">D&egrave;nye tranzaksyon</span>
+              <span data-lang="fr">Derni&egrave;re transaction</span>
+              <span data-lang="en">Last transaction</span>
+            </span>
+            <span class="fl-value">
+              <span data-lang="kr">Ti Machann Roseline, 150 HTG</span>
+              <span data-lang="fr">Ti Machann Roseline, 150 HTG</span>
+              <span data-lang="en">Ti Machann Roseline, 150 HTG</span>
+            </span>
+          </li>
+        </ul>
+        <div style="margin-top:1rem;">
+          <a href="#" class="btn btn-secondary btn-sm">
+            <span data-lang="kr">W&egrave; tout tranzaksyon</span>
+            <span data-lang="fr">Voir toutes les transactions</span>
+            <span data-lang="en">See all transactions</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ─── WORK ─── -->
+      <div class="p-card warm" id="travay">
+        <h2>
+          <span data-lang="kr">Travay ou</span>
+          <span data-lang="fr">Votre travail</span>
+          <span data-lang="en">Your work</span>
+        </h2>
+
+        <ul class="field-list" style="margin-bottom:1.5rem;">
+          <li>
+            <span class="fl-label">Site</span>
+            <span class="fl-value">Site 0 &mdash; Anse-&agrave;-Veau</span>
+          </li>
+          <li>
+            <span class="fl-label">
+              <span data-lang="kr">W&ograve;l</span>
+              <span data-lang="fr">R&ocirc;le</span>
+              <span data-lang="en">Role</span>
+            </span>
+            <span class="fl-value">
+              <span data-lang="kr">Jaden Moringa</span>
+              <span data-lang="fr">Jardin Moringa</span>
+              <span data-lang="en">Moringa Garden</span>
+            </span>
+          </li>
+          <li>
+            <span class="fl-label">
+              <span data-lang="kr">&Egrave;dtan travay (sem&egrave;n sa a)</span>
+              <span data-lang="fr">Heures travaill&eacute;es (cette semaine)</span>
+              <span data-lang="en">Hours worked (this week)</span>
+            </span>
+            <span class="fl-value" style="font-size:1.2rem; color:var(--green);">32h</span>
+          </li>
+          <li>
+            <span class="fl-label">
+              <span data-lang="kr">Kilti</span>
+              <span data-lang="fr">Cultures</span>
+              <span data-lang="en">Crops</span>
+            </span>
+            <span class="fl-value">
+              <span data-lang="kr">200 pye moringa</span>
+              <span data-lang="fr">200 pieds de moringa</span>
+              <span data-lang="en">200 moringa trees</span>
+            </span>
+          </li>
+        </ul>
+
+        <h3 style="font-size:0.95rem; margin-bottom:0.75rem;">
+          <span data-lang="kr">Sem&egrave;n sa a</span>
+          <span data-lang="fr">Cette semaine</span>
+          <span data-lang="en">This week</span>
+        </h3>
+        <div class="work-log">
+          <div class="work-day">
+            <div class="wd-label">
+              <span data-lang="kr">Lendi</span>
+              <span data-lang="fr">Lun</span>
+              <span data-lang="en">Mon</span>
+            </div>
+            <div class="wd-hours">6</div>
+            <div class="wd-task">
+              <span data-lang="kr">Plante moringa</span>
+              <span data-lang="fr">Planter moringa</span>
+              <span data-lang="en">Plant moringa</span>
+            </div>
+          </div>
+          <div class="work-day">
+            <div class="wd-label">
+              <span data-lang="kr">Madi</span>
+              <span data-lang="fr">Mar</span>
+              <span data-lang="en">Tue</span>
+            </div>
+            <div class="wd-hours">5</div>
+            <div class="wd-task">
+              <span data-lang="kr">Awoze jaden</span>
+              <span data-lang="fr">Arroser jardin</span>
+              <span data-lang="en">Water garden</span>
+            </div>
+          </div>
+          <div class="work-day">
+            <div class="wd-label">
+              <span data-lang="kr">M&egrave;kredi</span>
+              <span data-lang="fr">Mer</span>
+              <span data-lang="en">Wed</span>
+            </div>
+            <div class="wd-hours">6</div>
+            <div class="wd-task">
+              <span data-lang="kr">Rek&ograve;lte leti</span>
+              <span data-lang="fr">R&eacute;colter laitue</span>
+              <span data-lang="en">Harvest lettuce</span>
+            </div>
+          </div>
+          <div class="work-day">
+            <div class="wd-label">
+              <span data-lang="kr">Jedi</span>
+              <span data-lang="fr">Jeu</span>
+              <span data-lang="en">Thu</span>
+            </div>
+            <div class="wd-hours">5</div>
+            <div class="wd-task">
+              <span data-lang="kr">F&ograve;masyon</span>
+              <span data-lang="fr">Formation</span>
+              <span data-lang="en">Training</span>
+            </div>
+          </div>
+          <div class="work-day">
+            <div class="wd-label">
+              <span data-lang="kr">Vandredi</span>
+              <span data-lang="fr">Ven</span>
+              <span data-lang="en">Fri</span>
+            </div>
+            <div class="wd-hours">4</div>
+            <div class="wd-task">
+              <span data-lang="kr">Netwaye</span>
+              <span data-lang="fr">Nettoyage</span>
+              <span data-lang="en">Cleaning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── PAY ─── -->
+      <div class="p-card warm" id="sale">
+        <h2>
+          <span data-lang="kr">Istwa lajan ou</span>
+          <span data-lang="fr">Historique de paiement</span>
+          <span data-lang="en">Pay history</span>
+        </h2>
+
+        <div class="kpi-row" style="margin-bottom:1.5rem;">
+          <div class="kpi-card-portal">
+            <div class="kpi-num gold">$189.00</div>
+            <div class="kpi-lbl">
+              <span data-lang="kr">Total touche</span>
+              <span data-lang="fr">Total per&ccedil;u</span>
+              <span data-lang="en">Total earned</span>
+            </div>
+          </div>
+          <div class="kpi-card-portal">
+            <div class="kpi-num">3</div>
+            <div class="kpi-lbl">
+              <span data-lang="kr">Peman</span>
+              <span data-lang="fr">Paiements</span>
+              <span data-lang="en">Payments</span>
+            </div>
+          </div>
+        </div>
+
+        <table class="p-table">
+          <thead>
+            <tr>
+              <th data-lang="kr">Trim&egrave;s</th>
+              <th data-lang="fr">Trimestre</th>
+              <th data-lang="en">Quarter</th>
+              <th data-lang="kr">Montan</th>
+              <th data-lang="fr">Montant</th>
+              <th data-lang="en">Amount</th>
+              <th>Date</th>
+              <th>BaseScan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Q1 2026</td>
+              <td>$63.00</td>
+              <td>31 mars 2026</td>
+              <td>
+                <a href="#" class="bs-link" title="Sa a se pr&egrave;v sou blockchain. Li pa ka chanje.">0x3f7a...c821</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Q4 2025</td>
+              <td>$63.00</td>
+              <td>31 d&eacute;c. 2025</td>
+              <td><a href="#" class="bs-link">0x8b2e...f094</a></td>
+            </tr>
+            <tr>
+              <td>Q3 2025</td>
+              <td>$63.00</td>
+              <td>30 sept. 2025</td>
+              <td><a href="#" class="bs-link">0xa1d5...7e32</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="font-size:0.85rem; margin-top:1rem;">
+          <span data-lang="kr" style="font-weight:600;">Tout peman ou sou blockchain. P&egrave;sonn pa ka chanje li.</span>
+          <span data-lang="fr">Tous vos paiements sont sur la blockchain. Personne ne peut les modifier.</span>
+          <span data-lang="en">All your payments are on the blockchain. No one can change them.</span>
+        </p>
+
+        <p style="font-size:0.8rem; color:var(--text-light); margin-top:0.5rem;">
+          <span data-lang="kr">Pwochen peman: 30 jen 2026</span>
+          <span data-lang="fr">Prochain paiement: 30 juin 2026</span>
+          <span data-lang="en">Next payment: June 30, 2026</span>
+        </p>
+      </div>
+
+      <!-- ─── LIBRARY ─── -->
+      <div class="p-card warm" id="liv">
+        <h2>
+          <span data-lang="kr">Liv ou</span>
+          <span data-lang="fr">Vos livres</span>
+          <span data-lang="en">Your books</span>
+        </h2>
+
+        <table class="p-table">
+          <thead>
+            <tr>
+              <th data-lang="kr">Tit</th>
+              <th data-lang="fr">Titre</th>
+              <th data-lang="en">Title</th>
+              <th data-lang="kr">Dat prete</th>
+              <th data-lang="fr">Date emprunt</th>
+              <th data-lang="en">Checkout</th>
+              <th data-lang="kr">Dat retou</th>
+              <th data-lang="fr">Date retour</th>
+              <th data-lang="en">Return</th>
+              <th data-lang="kr">Estati</th>
+              <th data-lang="fr">Statut</th>
+              <th data-lang="en">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><em>Gouverneurs de la Ros&eacute;e</em></td>
+              <td>25 mars 2026</td>
+              <td>20 avr. 2026</td>
+              <td>
+                <span class="badge badge-amber" data-lang="kr">Ankou genyen</span>
+                <span class="badge badge-amber" data-lang="fr">En cours</span>
+                <span class="badge badge-amber" data-lang="en">Checked out</span>
+              </td>
+            </tr>
+            <tr>
+              <td><em>Ti Dife Boule</em></td>
+              <td>28 mars 2026</td>
+              <td>25 avr. 2026</td>
+              <td>
+                <span class="badge badge-amber" data-lang="kr">Ankou genyen</span>
+                <span class="badge badge-amber" data-lang="fr">En cours</span>
+                <span class="badge badge-amber" data-lang="en">Checked out</span>
+              </td>
+            </tr>
+            <tr>
+              <td><em>Lanm&egrave; a</em></td>
+              <td>1 mars 2026</td>
+              <td>22 mars 2026</td>
+              <td>
+                <span class="badge badge-green" data-lang="kr">Retounen</span>
+                <span class="badge badge-green" data-lang="fr">Retourn&eacute;</span>
+                <span class="badge badge-green" data-lang="en">Returned</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="display:flex; gap:24px; margin-top:1.25rem; flex-wrap:wrap;">
+          <div style="text-align:center;">
+            <div style="font-size:1.75rem; font-weight:700; color:var(--green);">3</div>
+            <div style="font-size:0.8rem; color:var(--text-light);">
+              <span data-lang="kr">Liv li trim&egrave;s sa a</span>
+              <span data-lang="fr">Livres lus ce trimestre</span>
+              <span data-lang="en">Books this quarter</span>
+            </div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:1.75rem; font-weight:700; color:var(--green);">8</div>
+            <div style="font-size:0.8rem; color:var(--text-light);">
+              <span data-lang="kr">Total liv li</span>
+              <span data-lang="fr">Total livres lus</span>
+              <span data-lang="en">Total books read</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── EQUITY ─── -->
+      <div class="p-card warm" id="ekite">
+        <h2>
+          <span data-lang="kr">Ekite ou nan kooperativ la</span>
+          <span data-lang="fr">Votre &eacute;quit&eacute; dans la coop&eacute;rative</span>
+          <span data-lang="en">Your equity in the cooperative</span>
+        </h2>
+
+        <ul class="field-list">
+          <li>
+            <span class="fl-label">
+              <span data-lang="kr">Pa kooperativ</span>
+              <span data-lang="fr">Parts coop&eacute;ratives</span>
+              <span data-lang="en">Cooperative shares</span>
+            </span>
+            <span class="fl-value" style="color:var(--green); font-size:1.1rem;">450 HTG</span>
+          </li>
+          <li>
+            <span class="fl-label">
+              <span data-lang="kr">Trim&egrave;s travay</span>
+              <span data-lang="fr">Trimestres travaill&eacute;s</span>
+              <span data-lang="en">Quarters worked</span>
+            </span>
+            <span class="fl-value">3</span>
+          </li>
+          <li>
+            <span class="fl-label">
+              <span data-lang="kr">Dwa v&ograve;t</span>
+              <span data-lang="fr">Droits de vote</span>
+              <span data-lang="en">Voting rights</span>
+            </span>
+            <span class="fl-value">
+              <span class="badge badge-green" data-lang="kr">Aktif &mdash; 1 v&ograve;t</span>
+              <span class="badge badge-green" data-lang="fr">Actif &mdash; 1 vote</span>
+              <span class="badge badge-green" data-lang="en">Active &mdash; 1 vote</span>
+            </span>
+          </li>
+          <li>
+            <span class="fl-label">
+              <span data-lang="kr">Rang</span>
+              <span data-lang="fr">Rang</span>
+              <span data-lang="en">Rank</span>
+            </span>
+            <span class="fl-value" style="color:var(--gold); font-weight:700;">
+              <span data-lang="kr">Manm</span>
+              <span data-lang="fr">Membre</span>
+              <span data-lang="en">Member</span>
+            </span>
+          </li>
+        </ul>
+
+        <!-- Progression -->
+        <div style="margin-top:1.5rem;">
+          <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:4px;">
+            <span style="font-weight:600;">
+              <span data-lang="kr">Manm</span>
+              <span data-lang="fr">Membre</span>
+              <span data-lang="en">Member</span>
+            </span>
+            <span style="color:var(--text-light);">
+              <span data-lang="kr">Ansyen</span>
+              <span data-lang="fr">Ancien</span>
+              <span data-lang="en">Elder</span>
+            </span>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-bar" style="height:16px;">
+              <div class="fill" style="width:37.5%; background: linear-gradient(90deg, var(--green), var(--gold));"></div>
+            </div>
+            <div class="progress-label">
+              <span data-lang="kr">3 trim&egrave;s sou 8 pou nivo &laquo; Ansyen &raquo;</span>
+              <span data-lang="fr">3 trimestres sur 8 pour le niveau &laquo; Ancien &raquo;</span>
+              <span data-lang="en">3 of 8 quarters for "Elder" level</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Levels -->
+        <div style="display:flex; gap:8px; margin-top:1.25rem; flex-wrap:wrap;">
+          <div style="flex:1; min-width:100px; text-align:center; padding:12px 8px; border-radius:8px; background:rgba(45,106,79,0.06); border:1px solid var(--border);">
+            <div style="font-size:0.7rem; color:var(--text-light); text-transform:uppercase;">
+              <span data-lang="kr">Nouvo</span><span data-lang="fr">Nouveau</span><span data-lang="en">New</span>
+            </div>
+            <div style="font-size:0.8rem;">0-3 trim.</div>
+          </div>
+          <div style="flex:1; min-width:100px; text-align:center; padding:12px 8px; border-radius:8px; background:rgba(212,168,67,0.1); border:2px solid var(--gold);">
+            <div style="font-size:0.7rem; color:var(--gold); text-transform:uppercase; font-weight:700;">
+              <span data-lang="kr">Manm</span><span data-lang="fr">Membre</span><span data-lang="en">Member</span>
+            </div>
+            <div style="font-size:0.8rem;">4-7 trim.</div>
+          </div>
+          <div style="flex:1; min-width:100px; text-align:center; padding:12px 8px; border-radius:8px; background:rgba(45,106,79,0.04); border:1px solid var(--border); opacity:0.6;">
+            <div style="font-size:0.7rem; color:var(--text-light); text-transform:uppercase;">
+              <span data-lang="kr">Ansyen</span><span data-lang="fr">Ancien</span><span data-lang="en">Elder</span>
+            </div>
+            <div style="font-size:0.8rem;">8-15 trim.</div>
+          </div>
+          <div style="flex:1; min-width:100px; text-align:center; padding:12px 8px; border-radius:8px; background:rgba(45,106,79,0.04); border:1px solid var(--border); opacity:0.4;">
+            <div style="font-size:0.7rem; color:var(--text-light); text-transform:uppercase;">
+              <span data-lang="kr">Fondat&egrave;</span><span data-lang="fr">Fondateur</span><span data-lang="en">Founder</span>
+            </div>
+            <div style="font-size:0.8rem;">16+ trim.</div>
+          </div>
+        </div>
+
+        <div class="info-block gold" style="margin-top:1.5rem;">
+          <p style="margin-bottom:0; font-size:0.95rem;">
+            <span data-lang="kr"><strong>Ou se yon pwopriyet&egrave;.</strong> Plis ou travay, plis ou posede. Se pa jis yon dj&ograve;b... se yon pati nan biznis la.</span>
+            <span data-lang="fr"><strong>Vous &ecirc;tes propri&eacute;taire.</strong> Plus vous travaillez, plus vous poss&eacute;dez. Ce n'est pas juste un emploi... c'est une part de l'entreprise.</span>
+            <span data-lang="en"><strong>You are an owner.</strong> The more you work, the more you own. It's not just a job... it's a share of the business.</span>
+          </p>
+        </div>
+
+        <!-- Next vote -->
+        <div style="margin-top:1.25rem;">
+          <p style="font-size:0.85rem; font-weight:600;">
+            <span data-lang="kr">Pwochen v&ograve;t:</span>
+            <span data-lang="fr">Prochain vote:</span>
+            <span data-lang="en">Next vote:</span>
+          </p>
+          <p style="font-size:0.85rem; color:var(--text-light);">
+            <span data-lang="kr">Chwazi kilti pou Q3 2026 &mdash; 15 jen 2026</span>
+            <span data-lang="fr">Choix des cultures Q3 2026 &mdash; 15 juin 2026</span>
+            <span data-lang="en">Q3 2026 crop selection &mdash; June 15, 2026</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- ─── CERTIFICATIONS ─── -->
+      <div class="p-card warm" id="sertifikasyon">
+        <h2>
+          <span data-lang="kr">F&ograve;masyon ou</span>
+          <span data-lang="fr">Vos certifications</span>
+          <span data-lang="en">Your certifications</span>
+        </h2>
+
+        <div class="cert-grid">
+          <div class="cert-badge completed">
+            <div class="cert-icon">&#10003;</div>
+            <div class="cert-name">
+              <span data-lang="kr">Agrikilti debaz</span>
+              <span data-lang="fr">Agriculture de base</span>
+              <span data-lang="en">Basic agriculture</span>
+            </div>
+            <div class="cert-status">
+              <span class="badge badge-green" data-lang="kr">Konplete</span>
+              <span class="badge badge-green" data-lang="fr">Compl&eacute;t&eacute;</span>
+              <span class="badge badge-green" data-lang="en">Completed</span>
+            </div>
+          </div>
+          <div class="cert-badge completed">
+            <div class="cert-icon">&#10003;</div>
+            <div class="cert-name">
+              <span data-lang="kr">Idwoponik Kratky</span>
+              <span data-lang="fr">Hydroponique Kratky</span>
+              <span data-lang="en">Kratky hydroponics</span>
+            </div>
+            <div class="cert-status">
+              <span class="badge badge-green" data-lang="kr">Konplete</span>
+              <span class="badge badge-green" data-lang="fr">Compl&eacute;t&eacute;</span>
+              <span class="badge badge-green" data-lang="en">Completed</span>
+            </div>
+          </div>
+          <div class="cert-badge in-progress">
+            <div class="cert-icon">&#9998;</div>
+            <div class="cert-name">
+              <span data-lang="kr">Transf&ograve;masyon moringa</span>
+              <span data-lang="fr">Transformation moringa</span>
+              <span data-lang="en">Moringa processing</span>
+            </div>
+            <div class="cert-status">
+              <span class="badge badge-amber" data-lang="kr">An kou &mdash; 60%</span>
+              <span class="badge badge-amber" data-lang="fr">En cours &mdash; 60%</span>
+              <span class="badge badge-amber" data-lang="en">In progress &mdash; 60%</span>
+            </div>
+          </div>
+          <div class="cert-badge in-progress">
+            <div class="cert-icon">&#9998;</div>
+            <div class="cert-name">
+              <span data-lang="kr">Lekti finansye</span>
+              <span data-lang="fr">Litt&eacute;ratie financi&egrave;re</span>
+              <span data-lang="en">Financial literacy</span>
+            </div>
+            <div class="cert-status">
+              <span class="badge badge-amber" data-lang="kr">An kou &mdash; 40%</span>
+              <span class="badge badge-amber" data-lang="fr">En cours &mdash; 40%</span>
+              <span class="badge badge-amber" data-lang="en">In progress &mdash; 40%</span>
+            </div>
+          </div>
+          <div class="cert-badge locked">
+            <div class="cert-icon">&#128274;</div>
+            <div class="cert-name">
+              <span data-lang="kr">Elvaj lapen</span>
+              <span data-lang="fr">&Eacute;levage lapin</span>
+              <span data-lang="en">Rabbit husbandry</span>
+            </div>
+            <div class="cert-status">
+              <span class="badge badge-grey" data-lang="kr">Pa k&ograve;manse</span>
+              <span class="badge badge-grey" data-lang="fr">Non commenc&eacute;</span>
+              <span class="badge badge-grey" data-lang="en">Not started</span>
+            </div>
+          </div>
+          <div class="cert-badge locked">
+            <div class="cert-icon">&#128274;</div>
+            <div class="cert-name">
+              <span data-lang="kr">Ent&egrave;grasyon machan</span>
+              <span data-lang="fr">Int&eacute;gration marchand</span>
+              <span data-lang="en">Merchant onboarding</span>
+            </div>
+            <div class="cert-status">
+              <span class="badge badge-grey" data-lang="kr">Pa k&ograve;manse</span>
+              <span class="badge badge-grey" data-lang="fr">Non commenc&eacute;</span>
+              <span class="badge badge-grey" data-lang="en">Not started</span>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size:0.85rem; margin-top:1.25rem; color:var(--text-light);">
+          <span data-lang="kr">Chak s&egrave;tifika ogmante val&egrave; ou nan kooperativ la. Valid&eacute; pa UWI.</span>
+          <span data-lang="fr">Chaque certification augmente votre valeur dans la coop&eacute;rative. Valid&eacute; par UWI.</span>
+          <span data-lang="en">Each certification increases your value in the cooperative. UWI-validated.</span>
+        </p>
+      </div>
+
+    </div><!-- .portal-content -->
+  </div><!-- .portal-main -->
+</div><!-- .portal-wrap -->
+
+<!-- Mobile bottom tabs -->
+<div class="mobile-tabs">
+  <a href="#kat" class="active">
+    <span class="tab-icon">&#128179;</span>
+    <span data-lang="kr">Kat</span><span data-lang="fr">Carte</span><span data-lang="en">Card</span>
+  </a>
+  <a href="#travay">
+    <span class="tab-icon">&#127793;</span>
+    <span data-lang="kr">Travay</span><span data-lang="fr">Travail</span><span data-lang="en">Work</span>
+  </a>
+  <a href="#sale">
+    <span class="tab-icon">&#128176;</span>
+    <span data-lang="kr">Lajan</span><span data-lang="fr">Salaire</span><span data-lang="en">Pay</span>
+  </a>
+  <a href="#liv">
+    <span class="tab-icon">&#128214;</span>
+    <span data-lang="kr">Liv</span><span data-lang="fr">Livres</span><span data-lang="en">Books</span>
+  </a>
+  <a href="#ekite">
+    <span class="tab-icon">&#11088;</span>
+    <span data-lang="kr">Ekite</span><span data-lang="fr">&Eacute;quit&eacute;</span><span data-lang="en">Equity</span>
+  </a>
+</div>
+
+<script src="../lang.js"></script>
+<script>
+  /* Default to Kreyol on this page */
+  (function() {
+    if (!localStorage.getItem('konkret-lang') || localStorage.getItem('konkret-lang') === 'fr') {
+      window.konkretLang.apply('kr');
+    }
+  })();
+</script>
+</body>
+</html>

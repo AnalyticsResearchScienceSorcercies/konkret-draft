@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impact economique | KONKRET Haiti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #1a2332; --green: #2d6a4f; --gold: #d4a843; --white: #fafafa;
+  --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --text-secondary: #6b7280; --border: #e5e7eb;
+}
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+h1, h2, h3 { font-family: 'Source Serif 4', serif; }
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+nav { background: var(--navy); padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+nav .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+nav .logo { color: var(--gold); font-weight: 700; font-size: 20px; letter-spacing: 1px; }
+nav .links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+nav .links a { color: var(--white); font-size: 14px; font-weight: 500; }
+nav .links a:hover { color: var(--gold); text-decoration: none; }
+.lang-toggle { background: var(--gold); color: var(--navy); border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 13px; }
+.hero { background: var(--navy); color: var(--white); padding: 80px 0 60px; text-align: center; }
+.hero h1 { font-size: 42px; margin-bottom: 16px; }
+.hero .subtitle { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 650px; margin: 0 auto; }
+.gold { color: var(--gold); }
+section { padding: 60px 0; }
+section:nth-child(even) { background: var(--card); }
+section h2 { font-size: 28px; margin-bottom: 24px; color: var(--navy); }
+section h3 { font-size: 20px; margin-bottom: 16px; color: var(--green); }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+.kpi-card { text-align: center; padding: 32px 20px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; }
+.kpi-card .number { font-size: 40px; font-weight: 700; color: var(--green); display: block; margin-bottom: 4px; }
+.kpi-card .label { font-size: 14px; color: var(--text-secondary); display: block; margin-bottom: 4px; }
+.kpi-card .source { font-size: 12px; color: var(--text-secondary); opacity: 0.7; }
+.chart-placeholder { background: linear-gradient(135deg, var(--navy) 0%, #2d6a4f 50%, var(--navy) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); font-size: 14px; min-height: 280px; margin: 24px 0; text-align: center; padding: 24px; }
+.metric-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+.metric-table th, .metric-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); font-size: 15px; }
+.metric-table th { background: var(--navy); color: var(--white); font-weight: 600; font-size: 14px; }
+.metric-table tr:hover { background: rgba(45,106,79,0.04); }
+.btn { display: inline-block; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 15px; transition: all 0.2s; }
+.btn-primary { background: var(--green); color: var(--white); }
+.btn-primary:hover { background: #245a42; text-decoration: none; }
+.btn-gold { background: var(--gold); color: var(--navy); }
+.comparison-bar { display: flex; gap: 32px; align-items: stretch; flex-wrap: wrap; margin: 32px 0; }
+.comparison-bar .bar-item { flex: 1; min-width: 280px; border-radius: 12px; padding: 32px; text-align: center; }
+.comparison-bar .bar-konkret { background: var(--green); color: var(--white); }
+.comparison-bar .bar-usaid { background: #f3f4f6; color: var(--text); border: 1px solid var(--border); }
+.comparison-bar .bar-item .big-num { font-size: 48px; font-weight: 700; display: block; margin-bottom: 8px; }
+.comparison-bar .bar-konkret .big-num { color: var(--gold); }
+.highlight-box { background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.2); border-radius: 12px; padding: 24px 32px; margin: 24px 0; }
+footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 48px 0 32px; }
+footer .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; }
+footer h4 { color: var(--gold); margin-bottom: 16px; font-family: 'Inter', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+footer a { color: rgba(255,255,255,0.7); font-size: 14px; }
+footer a:hover { color: var(--gold); }
+footer ul { list-style: none; }
+footer ul li { margin-bottom: 8px; }
+.footer-bottom { text-align: center; margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; }
+@media (max-width: 768px) {
+  .hero h1 { font-size: 28px; }
+  .hero { padding: 48px 0 40px; }
+  section { padding: 40px 0; }
+  .kpi-card .number { font-size: 28px; }
+  .comparison-bar .bar-item .big-num { font-size: 32px; }
+}
+[data-lang="en"] { display: none; }
+body.lang-en [data-lang="fr"] { display: none; }
+body.lang-en [data-lang="en"] { display: revert; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="logo">KONKRET</a>
+    <div class="links">
+      <a href="/notre-histoire.html">Notre histoire</a>
+      <a href="/partenaires/rfl.html">Partenaires</a>
+      <a href="/transparence.html">Transparence</a>
+      <a href="/impact-economique.html">Impact</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/portail.html">Portail</a>
+      <button class="lang-toggle" onclick="toggleLang()">EN</button>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="container">
+    <h1>
+      <span data-lang="fr">Impact economique</span>
+      <span data-lang="en">Economic Impact</span>
+    </h1>
+    <p class="subtitle">
+      <span data-lang="fr">L'impact... mesure, pas estime.</span>
+      <span data-lang="en">Impact... measured, not estimated.</span>
+    </p>
+  </div>
+</div>
+
+<!-- KPI DASHBOARD -->
+<section>
+  <div class="container">
+    <h2>
+      <span data-lang="fr">Tableau de bord en direct</span>
+      <span data-lang="en">Live Dashboard</span>
+    </h2>
+    <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+      <div class="kpi-card">
+        <span class="number">$112K</span>
+        <span class="label" data-lang="fr">Contribution au PIB</span>
+        <span class="label" data-lang="en">GDP Contribution</span>
+        <span class="source" data-lang="fr">Modele CGE Surin</span>
+        <span class="source" data-lang="en">Surin CGE model</span>
+      </div>
+      <div class="kpi-card">
+        <span class="number">310</span>
+        <span class="label" data-lang="fr">Jeunes employes</span>
+        <span class="label" data-lang="en">Youth Employed</span>
+        <span class="source">KONKRET data</span>
+      </div>
+      <div class="kpi-card">
+        <span class="number">$360K</span>
+        <span class="label" data-lang="fr">Importations substituees/trimestre</span>
+        <span class="label" data-lang="en">Imports substituted/quarter</span>
+        <span class="source" data-lang="fr">KONKRET + douanes</span>
+        <span class="source" data-lang="en">KONKRET + customs</span>
+      </div>
+      <div class="kpi-card">
+        <span class="number">2.3x</span>
+        <span class="label" data-lang="fr">Multiplicateur d'emploi</span>
+        <span class="label" data-lang="en">Employment Multiplier</span>
+        <span class="source" data-lang="fr">Modele CGE</span>
+        <span class="source" data-lang="en">CGE model</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMPLOYMENT MULTIPLIER -->
+<section>
+  <div class="container">
+    <h2>
+      <span data-lang="fr">Chaque emploi KONKRET cree 2.3 emplois indirects</span>
+      <span data-lang="en">Each KONKRET job creates 2.3 indirect jobs</span>
+    </h2>
+    <div class="card">
+      <p data-lang="fr">
+        310 emplois directs x 2.3 = <strong>713 emplois totaux</strong> (directs + indirects).
+        Les marchands, transporteurs, et fournisseurs locaux beneficient de la circulation.
+        Modele CGE calibre par Reginald Surin (Sogebank, ancien conseiller economique du Premier Ministre).
+      </p>
+      <p data-lang="en">
+        310 direct jobs x 2.3 = <strong>713 total jobs</strong> (direct + indirect).
+        Merchants, transporters, and local suppliers benefit from the circulation.
+        CGE model calibrated by Reginald Surin (Sogebank, former economic adviser to Prime Minister).
+      </p>
+      <div class="chart-placeholder">
+        <span data-lang="fr">Graphique linéaire: Emplois directs vs emplois totaux par trimestre<br>[Espace reserve pour Datawrapper]</span>
+        <span data-lang="en">Line chart: Direct jobs vs total jobs by quarter<br>[Datawrapper embed placeholder]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPORT SUBSTITUTION -->
+<section>
+  <div class="container">
+    <h2>
+      <span data-lang="fr">Substitution des importations</span>
+      <span data-lang="en">Import Substitution</span>
+    </h2>
+    <p style="margin-bottom: 24px;">
+      <span data-lang="fr">Chaque produit cultive localement est un produit non importe.</span>
+      <span data-lang="en">Every product grown locally is a product not imported.</span>
+    </p>
+    <table class="metric-table">
+      <thead>
+        <tr>
+          <th data-lang="fr">Produit</th><th data-lang="en">Product</th>
+          <th data-lang="fr">Import annuel</th><th data-lang="en">Annual import</th>
+          <th>Production KONKRET</th>
+          <th data-lang="fr">% substitue</th><th data-lang="en">% substituted</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Moringa</td><td>$2.1M</td><td>$180K</td><td>8.6%</td></tr>
+        <tr><td data-lang="fr">Cafe</td><td data-lang="en">Coffee</td><td>$12M</td><td>$120K</td><td>1%</td></tr>
+        <tr><td data-lang="fr">Miel</td><td data-lang="en">Honey</td><td>$800K</td><td>$60K</td><td>7.5%</td></tr>
+      </tbody>
+    </table>
+    <div class="chart-placeholder">
+      <span data-lang="fr">Graphique a barres: Importations vs Production KONKRET par produit<br>[Espace reserve pour Datawrapper]</span>
+      <span data-lang="en">Bar chart: Imports vs KONKRET Production by product<br>[Datawrapper embed placeholder]</span>
+    </div>
+  </div>
+</section>
+
+<!-- REMITTANCE CAPTURE -->
+<section>
+  <div class="container">
+    <h2>
+      <span data-lang="fr">Capture des envois de fonds</span>
+      <span data-lang="en">Remittance Capture</span>
+    </h2>
+    <div class="card">
+      <p data-lang="fr">
+        $4.1 milliards de transferts de la diaspora en 2024. Frais moyens de transfert: 8-12%.
+        KONKRET redirige une partie de cette circulation via les abonnements (Coinbase Commerce, frais < 1%)
+        directement dans l'economie locale. Chaque dollar d'abonnement est un dollar de remise sans intermediaire.
+      </p>
+      <p data-lang="en">
+        $4.1 billion in diaspora remittances in 2024. Average transfer fees: 8-12%.
+        KONKRET redirects part of this circulation via subscriptions (Coinbase Commerce, fees < 1%)
+        directly into the local economy. Every subscription dollar is a remittance dollar without intermediaries.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TAX REVENUE -->
+<section>
+  <div class="container">
+    <h2>
+      <span data-lang="fr">Revenus fiscaux generes</span>
+      <span data-lang="en">Tax Revenue Generated</span>
+    </h2>
+    <div class="card">
+      <p data-lang="fr">
+        Chaque emploi genere des revenus fiscaux locaux et nationaux via la consommation,
+        les transactions marchandes, et les activites de transformation. Le modele CGE de Surin
+        estime la contribution fiscale de l'ecosysteme KONKRET a l'echelle nationale.
+      </p>
+      <p data-lang="en">
+        Each job generates local and national tax revenue through consumption,
+        merchant transactions, and processing activities. Surin's CGE model
+        estimates the tax contribution of the KONKRET ecosystem at national scale.
+      </p>
+      <div class="chart-placeholder">
+        <span data-lang="fr">Graphique: Revenus fiscaux projetes par echelle d'expansion<br>[Espace reserve]</span>
+        <span data-lang="en">Chart: Projected tax revenue by expansion scale<br>[Placeholder]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SURIN CGE MODEL -->
+<section>
+  <div class="container">
+    <h2>
+      <span data-lang="fr">Modele CGE Surin</span>
+      <span data-lang="en">Surin CGE Model</span>
+    </h2>
+    <div class="highlight-box">
+      <p data-lang="fr">
+        Le modele d'equilibre general calculable (CGE) de Reginald Surin, calibre sur les donnees economiques haitiennes,
+        projette l'impact macroeconomique de l'expansion KONKRET. Mis a jour trimestriellement.
+      </p>
+      <p data-lang="en">
+        Reginald Surin's Computable General Equilibrium (CGE) model, calibrated on Haitian economic data,
+        projects the macroeconomic impact of KONKRET expansion. Updated quarterly.
+      </p>
+      <p style="margin-top: 16px;">
+        <a href="#" class="btn btn-primary" data-lang="fr">Telecharger le rapport trimestriel (PDF)</a>
+        <a href="#" class="btn btn-primary" data-lang="en">Download quarterly report (PDF)</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON BAR -->
+<section>
+  <div class="container">
+    <h2>
+      <span data-lang="fr">KONKRET vs USAID par $100</span>
+      <span data-lang="en">KONKRET vs USAID per $100</span>
+    </h2>
+    <div class="comparison-bar">
+      <div class="bar-item bar-konkret">
+        <span class="big-num">$70.00</span>
+        <span data-lang="fr">atteint les Haitiens<br><strong>KONKRET</strong></span>
+        <span data-lang="en">reaches Haitians<br><strong>KONKRET</strong></span>
+      </div>
+      <div class="bar-item bar-usaid">
+        <span class="big-num" style="color: var(--text);">$1.30</span>
+        <span data-lang="fr">atteint les Haitiens<br><strong>Aide traditionnelle USAID</strong></span>
+        <span data-lang="en">reaches Haitians<br><strong>Traditional USAID aid</strong></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTED OUTCOMES -->
+<section>
+  <div class="container">
+    <h2>
+      <span data-lang="fr">Projections a l'echelle</span>
+      <span data-lang="en">Projected Outcomes (Scaled)</span>
+    </h2>
+    <table class="metric-table">
+      <thead>
+        <tr>
+          <th data-lang="fr">Echelle</th><th data-lang="en">Scale</th>
+          <th data-lang="fr">Emplois directs</th><th data-lang="en">Direct jobs</th>
+          <th data-lang="fr">PIB contribution</th><th data-lang="en">GDP contribution</th>
+          <th data-lang="fr">Import substitue</th><th data-lang="en">Import substituted</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td data-lang="fr">Actuel</td><td data-lang="en">Current</td><td>310</td><td>$112K</td><td>$360K</td></tr>
+        <tr><td>50 sites</td><td>600</td><td>$217K</td><td>$700K</td></tr>
+        <tr><td>100 sites</td><td>1,200</td><td>$434K</td><td>$1.4M</td></tr>
+        <tr><td>500 sites</td><td>6,000</td><td>$2.2M</td><td>$7M</td></tr>
+      </tbody>
+    </table>
+    <div style="text-align: center; margin-top: 32px;">
+      <a href="#" class="btn btn-gold" data-lang="fr">Financer l'expansion</a>
+      <a href="#" class="btn btn-gold" data-lang="en">Fund the expansion</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <h4>KONKRET</h4>
+      <p style="font-size: 14px;" data-lang="fr">Un circuit ferme. De l'achat au terrain.</p>
+      <p style="font-size: 14px;" data-lang="en">A closed circuit. From purchase to ground.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="/notre-histoire.html" data-lang="fr">Notre histoire</a><a href="/notre-histoire.html" data-lang="en">Our Story</a></li>
+        <li><a href="/equipe.html" data-lang="fr">L'equipe</a><a href="/equipe.html" data-lang="en">The Team</a></li>
+        <li><a href="/transparence.html" data-lang="fr">Transparence</a><a href="/transparence.html" data-lang="en">Transparency</a></li>
+        <li><a href="/blog.html" data-lang="fr">Journal de Terrain</a><a href="/blog.html" data-lang="en">Field Journal</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-lang="fr">Operations</h4><h4 data-lang="en">Operations</h4>
+      <ul>
+        <li><a href="/site-zero.html">Site Zero</a></li>
+        <li><a href="/technologie.html" data-lang="fr">Technologie</a><a href="/technologie.html" data-lang="en">Technology</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info@konkret-haiti.com">info@konkret-haiti.com</a></li>
+        <li><a href="/contact.html" data-lang="fr">Formulaire</a><a href="/contact.html" data-lang="en">Contact form</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom" style="grid-column: 1 / -1;">
+      &copy; 2026 KONKRET Haiti.
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleLang() {
+  document.body.classList.toggle('lang-en');
+  const btn = document.querySelector('.lang-toggle');
+  btn.textContent = document.body.classList.contains('lang-en') ? 'FR' : 'EN';
+}
+</script>
+</body>
+</html>

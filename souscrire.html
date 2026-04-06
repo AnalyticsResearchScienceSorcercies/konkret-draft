@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S'abonner — Bwat Rekolt | KONKRET Haiti</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="/" class="nav-logo">KONKRET</a>
+  <button class="nav-toggle"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="/bwat-rekolt.html">Bwat Rekolt</a></li>
+    <li><a href="/financer.html">Financer</a></li>
+    <li><a href="/shop.html">Shop</a></li>
+    <li><a href="/nos-actions.html">Impact</a></li>
+    <li><button class="lang-toggle">EN</button></li>
+  </ul>
+</div></nav>
+
+<section class="hero" style="padding:3rem 1.5rem 2rem">
+  <div class="container">
+    <h1 data-lang="fr">S'abonner a la Bwat Rekolt</h1>
+    <h1 data-lang="en">Subscribe to the Harvest Box</h1>
+    <p class="subtitle" data-lang="fr">Remplissez le formulaire. Payez. Recevez.</p>
+    <p class="subtitle" data-lang="en">Fill the form. Pay. Receive.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:700px">
+    <h2 data-lang="fr">Choisissez votre plan</h2>
+    <h2 data-lang="en">Choose your plan</h2>
+    <div style="display:flex;gap:1rem;margin:1.5rem 0;flex-wrap:wrap">
+      <label class="card" style="flex:1;min-width:200px;cursor:pointer;text-align:center"><input type="radio" name="plan" value="quarterly" checked style="margin-bottom:0.5rem"><br><strong data-lang="fr">Trimestriel — $90</strong><strong data-lang="en">Quarterly — $90</strong></label>
+      <label class="card" style="flex:1;min-width:200px;cursor:pointer;text-align:center"><input type="radio" name="plan" value="annual" style="margin-bottom:0.5rem"><br><strong data-lang="fr">Annuel — $324 (economisez $36)</strong><strong data-lang="en">Annual — $324 (save $36)</strong></label>
+    </div>
+
+    <form>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div><label data-lang="fr">Prenom</label><label data-lang="en">First name</label><input type="text" required style="width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:var(--radius);font-size:1rem"></div>
+        <div><label data-lang="fr">Nom</label><label data-lang="en">Last name</label><input type="text" required style="width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:var(--radius);font-size:1rem"></div>
+      </div>
+      <div style="margin-top:1rem"><label data-lang="fr">Courriel</label><label data-lang="en">Email</label><input type="email" required style="width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:var(--radius);font-size:1rem"></div>
+      <div style="margin-top:1rem"><label data-lang="fr">Telephone (optionnel)</label><label data-lang="en">Phone (optional)</label><input type="tel" style="width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:var(--radius);font-size:1rem"></div>
+      <div style="margin-top:1rem"><label data-lang="fr">Adresse</label><label data-lang="en">Address</label><input type="text" required style="width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:var(--radius);font-size:1rem"></div>
+      <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem;margin-top:1rem">
+        <div><label data-lang="fr">Ville</label><label data-lang="en">City</label><input type="text" required style="width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:var(--radius);font-size:1rem"></div>
+        <div><label data-lang="fr">Etat</label><label data-lang="en">State</label><input type="text" required style="width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:var(--radius);font-size:1rem"></div>
+        <div><label data-lang="fr">Code postal</label><label data-lang="en">Zip</label><input type="text" required style="width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:var(--radius);font-size:1rem"></div>
+      </div>
+      <div style="margin-top:1rem"><label data-lang="fr">Code de parrainage (optionnel)</label><label data-lang="en">Referral code (optional)</label><input type="text" style="width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:var(--radius);font-size:1rem" placeholder="Ex: EGLISE-BETHEL-MTL"></div>
+
+      <div class="info-block" style="margin-top:2rem">
+        <h3 data-lang="fr">Votre commande</h3><h3 data-lang="en">Your order</h3>
+        <p data-lang="fr">Bwat Rekolt (Trimestriel) — $90.00<br>Livraison — Incluse<br><strong>Total: $90.00</strong></p>
+        <p data-lang="en">Harvest Box (Quarterly) — $90.00<br>Shipping — Included<br><strong>Total: $90.00</strong></p>
+        <p style="font-size:0.85rem;margin-top:1rem" data-lang="fr">70% Cooperatives ($63) | 15% Jeunesse ($13.50) | 10% Operations ($9) | 3% Reserve ($2.70) | 2% KONKRET ($1.80)</p>
+        <p style="font-size:0.85rem;margin-top:1rem" data-lang="en">70% Cooperatives ($63) | 15% Youth ($13.50) | 10% Operations ($9) | 3% Reserve ($2.70) | 2% KONKRET ($1.80)</p>
+      </div>
+
+      <div style="text-align:center;margin-top:2rem">
+        <button type="submit" class="btn btn-primary" style="font-size:1.1rem;padding:1rem 2.5rem" data-lang="fr">Payer $90 via Coinbase Commerce</button>
+        <button type="submit" class="btn btn-primary" style="font-size:1.1rem;padding:1rem 2.5rem" data-lang="en">Pay $90 via Coinbase Commerce</button>
+        <p style="margin-top:1rem;font-size:0.85rem;color:var(--text-light)" data-lang="fr">Carte bancaire, USDC, ETH, ou BTC acceptes. Annulation possible a tout moment.</p>
+        <p style="margin-top:1rem;font-size:0.85rem;color:var(--text-light)" data-lang="en">Credit card, USDC, ETH, or BTC accepted. Cancel anytime.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="footer"><div class="footer-inner">
+  <div><h4 style="color:var(--gold)">KONKRET</h4><p>Agrikilti. Jenes. Lavni.</p></div>
+  <div><h4>Navigation</h4><ul class="footer-links"><li><a href="/bwat-rekolt.html">Bwat Rekolt</a></li><li><a href="/financer.html">Financer</a></li><li><a href="/contact.html">Contact</a></li></ul></div>
+  <div><h4 data-lang="fr">En savoir plus</h4><h4 data-lang="en">Learn more</h4><ul class="footer-links"><li><a href="/le-probleme.html">Le probleme</a></li><li><a href="/transparence.html">Transparence</a></li></ul></div>
+</div><div class="footer-bottom">&copy; 2026 KONKRET Haiti.</div></footer>
+<script src="lang.js"></script>
+</body>
+</html>
