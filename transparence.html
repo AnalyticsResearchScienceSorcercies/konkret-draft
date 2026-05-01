@@ -160,7 +160,7 @@ body.lang-en [data-lang="en"] { display: revert; }
       <div style="flex: 2; background: #6b7280;">2%</div>
     </div>
     <div class="split-legend">
-      <div class="split-legend-item"><div class="dot" style="background: var(--green);"></div><span data-lang="fr">Operations terrain (70%)</span><span data-lang="en">Ground operations (70%)</span></div>
+      <div class="split-legend-item"><div class="dot" style="background: var(--green);"></div><span data-lang="fr">Cooperatives agricoles (70%)</span><span data-lang="en">Agricultural cooperatives (70%)</span></div>
       <div class="split-legend-item"><div class="dot" style="background: var(--gold);"></div><span data-lang="fr">Reserve cooperative (15%)</span><span data-lang="en">Cooperative reserve (15%)</span></div>
       <div class="split-legend-item"><div class="dot" style="background: var(--navy);"></div><span data-lang="fr">Logistique (10%)</span><span data-lang="en">Logistics (10%)</span></div>
       <div class="split-legend-item"><div class="dot" style="background: #1d4e89;"></div><span data-lang="fr">Technologie (3%)</span><span data-lang="en">Technology (3%)</span></div>
@@ -177,10 +177,10 @@ body.lang-en [data-lang="en"] { display: revert; }
         </tr>
       </thead>
       <tbody>
-        <tr><td data-lang="fr">Operations</td><td data-lang="en">Operations</td><td>70%</td><td>$[live]</td><td data-lang="fr">Operations terrain</td><td data-lang="en">Ground operations</td></tr>
-        <tr><td data-lang="fr">Reserve</td><td data-lang="en">Reserve</td><td>15%</td><td>$[live]</td><td data-lang="fr">Reserve cooperative</td><td data-lang="en">Cooperative reserve</td></tr>
-        <tr><td data-lang="fr">Logistique</td><td data-lang="en">Logistics</td><td>10%</td><td>$[live]</td><td data-lang="fr">Logistique</td><td data-lang="en">Logistics</td></tr>
-        <tr><td data-lang="fr">Technologie</td><td data-lang="en">Technology</td><td>3%</td><td>$[live]</td><td data-lang="fr">Technologie</td><td data-lang="en">Technology</td></tr>
+        <tr><td data-lang="fr">Operations</td><td data-lang="en">Operations</td><td>70%</td><td>$[live]</td><td data-lang="fr">Cooperatives agricoles</td><td data-lang="en">Agricultural cooperatives</td></tr>
+        <tr><td data-lang="fr">Reserve</td><td data-lang="en">Reserve</td><td>15%</td><td>$[live]</td><td data-lang="fr">Programme jeunesse</td><td data-lang="en">Youth program</td></tr>
+        <tr><td data-lang="fr">Operations</td><td data-lang="en">Operations</td><td>10%</td><td>$[live]</td><td data-lang="fr">Operations</td><td data-lang="en">Operations</td></tr>
+        <tr><td data-lang="fr">Reserve cooperative</td><td data-lang="en">Cooperative reserve</td><td>3%</td><td>$[live]</td><td data-lang="fr">Reserve cooperative</td><td data-lang="en">Cooperative reserve</td></tr>
         <tr><td>Admin</td><td>2%</td><td>$[live]</td><td>Administration</td></tr>
       </tbody>
     </table>
@@ -354,5 +354,30 @@ function toggleLang() {
   document.querySelector('.lang-toggle').textContent = document.body.classList.contains('lang-en') ? 'FR' : 'EN';
 }
 </script>
+
+<section class="section" id="two-models" style="background:#f7f3ec">
+  <div class="container" style="max-width:900px">
+    <div class="section-header">
+      <h2 data-lang="fr">Deux modeles de partage</h2>
+      <h2 data-lang="en">Two profit-share models</h2>
+    </div>
+    <p data-lang="fr">Konkret opere deux produits avec deux modeles de partage de revenus distincts. Les deux sont publics, les deux sont audites.</p>
+    <p data-lang="en">Konkret operates two products with two distinct revenue-share models. Both are public, both are audited.</p>
+
+    <h3 data-lang="fr" style="margin-top:1.5rem">1. Bwat Rekolt (abonnement consommateur): 70/15/10/3/2</h3>
+    <h3 data-lang="en" style="margin-top:1.5rem">1. Bwat Rekolt (consumer subscription): 70/15/10/3/2</h3>
+    <p data-lang="fr">Pour chaque $90/trimestre: 70% cooperatives agricoles, 15% programme jeunesse, 10% operations, 3% reserve cooperative, 2% Konkret.</p>
+    <p data-lang="en">For every $90/quarter: 70% agricultural cooperatives, 15% youth program, 10% operations, 3% cooperative reserve, 2% Konkret.</p>
+
+    <h3 data-lang="fr" style="margin-top:1.5rem">2. Sikisal (operations terrain): 40/30/30</h3>
+    <h3 data-lang="en" style="margin-top:1.5rem">2. Sikisal (ground operations): 40/30/30</h3>
+    <p data-lang="fr">Pour chaque sikisal de $3,600 (10 jeunes, 6 mois): 40% jeunes, 30% groupe local (paroisse ou organisation partenaire), 30% Konkret pour faire grandir le reseau.</p>
+    <p data-lang="en">For every $3,600 sikisal (10 youth, 6 months): 40% youth, 30% local group (parish or partner organization), 30% Konkret to grow the network.</p>
+
+    <p style="margin-top:1.5rem;font-style:italic" data-lang="fr">Ces deux modeles servent deux produits differents. La distinction est explicite pour que personne ne confonde les chiffres.</p>
+    <p style="margin-top:1.5rem;font-style:italic" data-lang="en">These two models serve two different products. The distinction is explicit so no one confuses the numbers.</p>
+  </div>
+</section>
+
 </body>
 </html>
