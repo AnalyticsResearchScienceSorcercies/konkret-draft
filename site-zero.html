@@ -4,102 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Site Zero | KONKRET Haiti</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --navy: #1a2332; --green: #2d6a4f; --gold: #d4a843; --white: #fafafa;
-  --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --text-secondary: #6b7280; --border: #e5e7eb;
-}
-body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
-h1, h2, h3 { font-family: 'Source Serif 4', serif; }
-a { color: var(--green); text-decoration: none; }
-a:hover { text-decoration: underline; }
-.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-nav { background: var(--navy); padding: 16px 0; position: sticky; top: 0; z-index: 100; }
-nav .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-nav .logo { color: var(--gold); font-weight: 700; font-size: 20px; letter-spacing: 1px; }
-nav .links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
-nav .links a { color: var(--white); font-size: 14px; font-weight: 500; }
-nav .links a:hover { color: var(--gold); text-decoration: none; }
-.lang-toggle { background: var(--gold); color: var(--navy); border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 13px; }
-.hero { background: var(--navy); color: var(--white); padding: 80px 0 60px; text-align: center; }
-.hero h1 { font-size: 42px; margin-bottom: 16px; }
-.hero .subtitle { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 650px; margin: 0 auto; }
-.gold { color: var(--gold); }
-section { padding: 60px 0; }
-section:nth-child(even) { background: var(--card); }
-section h2 { font-size: 28px; margin-bottom: 24px; color: var(--navy); }
-section h3 { font-size: 20px; margin-bottom: 16px; color: var(--green); }
-.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin-bottom: 24px; }
-.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
-.stat-card { text-align: center; padding: 24px 20px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; }
-.stat-card .number { font-size: 36px; font-weight: 700; color: var(--green); display: block; margin-bottom: 4px; }
-.stat-card .label { font-size: 14px; color: var(--text-secondary); }
+/* Site Zero page-specific */
 .map-placeholder { background: linear-gradient(135deg, #2d6a4f 0%, #1a2332 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6); font-size: 14px; min-height: 400px; margin: 24px 0; text-align: center; padding: 24px; position: relative; }
 .map-labels { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 24px; }
-.map-label { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 12px 16px; color: var(--white); font-size: 13px; }
-.map-label .icon { margin-right: 6px; }
+.map-label { background: rgba(45,106,79,0.08); border: 1px solid rgba(45,106,79,0.25); border-radius: 8px; padding: 12px 16px; color: var(--text); font-size: 13px; }
 .metric-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
 .metric-table th, .metric-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); font-size: 15px; }
 .metric-table th { background: var(--navy); color: var(--white); font-weight: 600; font-size: 14px; }
+.stat-card { text-align: center; padding: 24px 20px; background: #fff; border: 1px solid var(--border); border-radius: 12px; }
+.stat-card .number { font-size: 36px; font-weight: 700; color: var(--green); display: block; margin-bottom: 4px; }
+.stat-card .label { font-size: 14px; color: var(--text-light); }
 .status-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
 .status-active { background: rgba(45,106,79,0.15); color: var(--green); }
 .status-progress { background: rgba(212,168,67,0.15); color: #b8942e; }
 .status-needed { background: rgba(193,41,46,0.15); color: #c1292e; }
 .photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin: 24px 0; }
-.photo-placeholder { background: linear-gradient(135deg, var(--navy), var(--green)); border-radius: 8px; min-height: 180px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); font-size: 13px; }
-figure.frame { margin: 0; background: #fff; border: 2px solid var(--navy); padding: 6px; }
-figure.frame img { display: block; width: 100%; height: 240px; object-fit: cover; }
-figure.frame figcaption { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); padding: 10px 4px 4px; text-align: center; border-top: 1px solid var(--border); margin-top: 6px; }
-figure.frame .caption-num { color: var(--gold); font-weight: 700; margin-right: 6px; }
-.layout-photo { background: #fff; border: 2px solid var(--navy); padding: 8px; margin: 24px 0; }
-.layout-photo img { display: block; width: 100%; max-height: 480px; object-fit: cover; }
-.layout-photo figcaption { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); padding: 12px 6px 6px; text-align: center; border-top: 1px solid var(--border); margin-top: 8px; }
-.last-updated { text-align: center; color: var(--text-secondary); font-size: 14px; padding: 16px 0; border-top: 1px solid var(--border); margin-top: 32px; }
-.btn { display: inline-block; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 15px; transition: all 0.2s; }
-.btn-primary { background: var(--green); color: var(--white); }
-.btn-primary:hover { background: #245a42; text-decoration: none; }
-.btn-gold { background: var(--gold); color: var(--navy); }
-.btn-gold:hover { background: #c49a38; text-decoration: none; }
-footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 48px 0 32px; }
-footer .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; }
-footer h4 { color: var(--gold); margin-bottom: 16px; font-family: 'Inter', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
-footer a { color: rgba(255,255,255,0.7); font-size: 14px; }
-footer a:hover { color: var(--gold); }
-footer ul { list-style: none; }
-footer ul li { margin-bottom: 8px; }
-.footer-bottom { text-align: center; margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; }
-@media (max-width: 768px) {
-  .hero h1 { font-size: 28px; }
-  .hero { padding: 48px 0 40px; }
-  section { padding: 40px 0; }
-  .card { padding: 20px; }
-  .map-placeholder { min-height: 250px; }
-}
-[data-lang="en"] { display: none; }
-body.lang-en [data-lang="fr"] { display: none; }
-body.lang-en [data-lang="en"] { display: revert; }
+.last-updated { text-align: center; color: var(--text-light); font-size: 14px; padding: 16px 0; border-top: 1px solid var(--border); margin-top: 32px; }
+@media (max-width: 768px) { .map-placeholder { min-height: 250px; } }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="container">
-    <a href="" class="logo">KONKRET</a>
-    <div class="links">
-      <a href="notre-histoire.html">Notre histoire</a>
-      <a href="partenaires/rfl.html">Partenaires</a>
-      <a href="transparence.html">Transparence</a>
-      <a href="impact-economique.html">Impact</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
-      <a href="portail.html">Portail</a>
-      <button class="lang-toggle" onclick="toggleLang()">EN</button>
-    </div>
-  </div>
-</nav>
+<nav class="nav"><div class="nav-inner">
+  <a href="" class="nav-logo">KONKRET</a>
+  <button class="nav-toggle"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="bwat-rekolt.html">Bwat Rekolt</a></li>
+    <li><a href="financer.html">Financer</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="nos-actions.html">Impact</a></li>
+    <li><a href="partenaires/" class="active">Partenaires</a></li>
+    <li><button class="lang-toggle">EN</button></li>
+  </ul>
+</div></nav>
 
 <div class="hero">
   <div class="container">
@@ -115,7 +54,7 @@ body.lang-en [data-lang="en"] { display: revert; }
 </div>
 
 <!-- LAYOUT MAP -->
-<section>
+<section class="section">
   <div class="container">
     <h2>
       <span data-lang="fr">Plan du site</span>
@@ -194,7 +133,7 @@ body.lang-en [data-lang="en"] { display: revert; }
 </section>
 
 <!-- EQUIPMENT STATUS -->
-<section>
+<section class="section">
   <div class="container">
     <h2>
       <span data-lang="fr">Inventaire et statut des equipements</span>
@@ -255,7 +194,7 @@ body.lang-en [data-lang="en"] { display: revert; }
 </section>
 
 <!-- YOUTH COUNT -->
-<section>
+<section class="section">
   <div class="container">
     <h2>
       <span data-lang="fr">Jeunes</span>
@@ -287,7 +226,7 @@ body.lang-en [data-lang="en"] { display: revert; }
 </section>
 
 <!-- PHOTOS -->
-<section>
+<section class="section">
   <div class="container">
     <h2>
       <span data-lang="fr">Photos recentes</span>
@@ -327,7 +266,7 @@ body.lang-en [data-lang="en"] { display: revert; }
 </section>
 
 <!-- CTA -->
-<section style="text-align: center;">
+<section class="section" style="text-align:center">
   <div class="container">
     <h2>
       <span data-lang="fr">Ce site a coute $3,600 a lancer. Financez le prochain.</span>
@@ -338,38 +277,11 @@ body.lang-en [data-lang="en"] { display: revert; }
   </div>
 </section>
 
-<footer>
-  <div class="container">
-    <div>
-      <h4>KONKRET</h4>
-      <p style="font-size: 14px;" data-lang="fr">Un circuit ferme. De l'achat au terrain.</p>
-      <p style="font-size: 14px;" data-lang="en">A closed circuit. From purchase to ground.</p>
-    </div>
-    <div>
-      <h4>Navigation</h4>
-      <ul>
-        <li><a href="notre-histoire.html" data-lang="fr">Notre histoire</a><a href="notre-histoire.html" data-lang="en">Our Story</a></li>
-        <li><a href="equipe.html" data-lang="fr">L'equipe</a><a href="equipe.html" data-lang="en">The Team</a></li>
-        <li><a href="transparence.html" data-lang="fr">Transparence</a><a href="transparence.html" data-lang="en">Transparency</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:info@konkret-haiti.com">info@konkret-haiti.com</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-bottom" style="grid-column: 1 / -1;">&copy; 2026 KONKRET Haiti.</div>
-  </div>
-</footer>
-
-<script>
-function toggleLang() {
-  document.body.classList.toggle('lang-en');
-  document.querySelector('.lang-toggle').textContent = document.body.classList.contains('lang-en') ? 'FR' : 'EN';
-}
-</script>
+<footer class="footer"><div class="footer-inner">
+  <div><h4 style="color:var(--gold)">KONKRET</h4><p data-lang="fr">Agrikilti. Jenes. Lavni.</p><p data-lang="en">Agriculture. Youth. Future.</p></div>
+  <div><h4 data-lang="fr">Navigation</h4><h4 data-lang="en">Navigation</h4><ul class="footer-links"><li><a href="notre-histoire.html" data-lang="fr">Notre histoire</a><a href="notre-histoire.html" data-lang="en">Our story</a></li><li><a href="equipe.html" data-lang="fr">L'equipe</a><a href="equipe.html" data-lang="en">The team</a></li><li><a href="transparence.html" data-lang="fr">Transparence</a><a href="transparence.html" data-lang="en">Transparency</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+  <div><h4>Contact</h4><ul class="footer-links"><li><a href="mailto:info@konkret-haiti.com">info@konkret-haiti.com</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+</div><div class="footer-bottom">&copy; 2026 KONKRET. <span data-lang="fr">Fonde par Daniel Tillias (Impact 480 LLC) + Wesley Bertil (BARSS LLC). Construit en Haiti, pour Haiti.</span><span data-lang="en">Founded by Daniel Tillias (Impact 480 LLC) + Wesley Bertil (BARSS LLC). Built in Haiti, for Haiti.</span></div></footer>
+<script src="lang.js"></script>
 </body>
 </html>
